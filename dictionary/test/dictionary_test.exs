@@ -2,7 +2,7 @@ defmodule DictionaryTest do
   use ExUnit.Case
   doctest Dictionary
 
-  test "greets the world" do
-    assert Dictionary.hello() == :world
+  test "start returns list of words" do
+    assert String.length(Dictionary.random_word) > 0
   end
 end
