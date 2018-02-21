@@ -1,4 +1,8 @@
 <p>
+  Used letters: <%= @tally.used_letters |> Enum.join(", ") %>
+</p>
+
+<p>
   Turns left: <%= @tally.turns_left %>
 </p>
 
