@@ -64,5 +64,12 @@ window.onload = function() {
   let app     = view(hangman)
 
   hangman.connect_to_hangman()
+
+  window.addEventListener('keydown', function (e) {
+    if (event.keyCode >= 65 && event.keyCode <= 90) {
+      hangman.make_move(event.key)
+    }
+  })
 }
+
 

@@ -24,7 +24,6 @@ export default class HangmanSocket {
   setup_channel() {
     this.channel = this.socket.channel("hangman:game", {})
     this.channel.on("tally", tally => {
-      console.log(tally)
       this.copy_tally(tally)
     })
   }

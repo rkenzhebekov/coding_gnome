@@ -31,7 +31,7 @@ defmodule Hangman.Game do
     %{
       game_state: game.game_state,
       turns_left: game.turns_left,
-      letters: game.letters |> reveal_guessed(game.used),
+      letters: reveal_guessed(game),
       used_letters: MapSet.to_list(game.used)
     }
   end
@@ -63,9 +63,11 @@ defmodule Hangman.Game do
     %{ game | turns_left: turns_left - 1, game_state: :bad_guess }
   end
 
-  defp reveal_guessed(letters, used) do
-    letters
-    |> Enum.map(fn letter -> reveal_letter(letter, MapSet.member?(used, letter)) end)
+  defp reveal_guessed(game = %{ game_state: :lost}), do: game.letters
+
+  defp reveal_guessed(game) do
+    game.letters
+    |> Enum.map(fn letter -> reveal_letter(letter, MapSet.member?(game.used, letter)) end)
   end
 
   defp reveal_letter(letter, _in_word = true), do: letter
