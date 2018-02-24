@@ -26,6 +26,10 @@ export default class HangmanSocket {
     this.channel.on("tally", tally => {
       this.copy_tally(tally)
     })
+
+    this.channel.on("seconds_left", time => {
+      this.tally["seconds_left"] = time["seconds_left"]
+    })
   }
 
   copy_tally(from) {

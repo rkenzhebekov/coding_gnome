@@ -22,5 +22,8 @@
       {{ ch }}
     </button>
   </div>
+  <p>
+    <span>Remaining seconds: {{ game_seconds_left }}</span>
+  </p>
 </template>
 
