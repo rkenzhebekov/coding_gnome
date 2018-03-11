@@ -4,6 +4,8 @@ import Html exposing (Html, text, div, h1, img, button)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
+import Gallows
+
 -- import Svg exposing (..)
 -- import Svg.Attributes exposing (..)
 
@@ -55,18 +57,20 @@ view model =
     div []
         [
         div [ class "guess-buttons"] viewKeyboard
-        , img [ src "/images/logo.svg" ] []
+--        , img [ src "/images/logo.svg" ] []
         , h1 [] [ text "Your Elm App is working!" ]
+        , Gallows.viewGallows
+        , Gallows.viewCircle
         ]
 
 viewKeyboard : List (Html Msg)
 viewKeyboard =
     "abcdefghijklmnopqrstuvwxyz"
         |> String.split ""
-        |> List.map letterButton
+        |> List.map viewButton
 
-letterButton : String -> Html Msg
-letterButton letter =
+viewButton : String -> Html Msg
+viewButton letter =
     let
         correctClass = ""
     in
