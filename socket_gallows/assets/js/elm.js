@@ -12416,32 +12416,1060 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _user$project$Main$update = F2(
-	function (msg, model) {
-		var _p0 = msg;
-		if (_p0.ctor === 'Guess') {
-			return A2(
-				_elm_lang$core$Debug$log,
-				A2(_elm_lang$core$Basics_ops['++'], 'Pressed letter ', _p0._0),
-				{ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none});
-		} else {
-			return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
-		}
+var _elm_lang$svg$Svg$map = _elm_lang$virtual_dom$VirtualDom$map;
+var _elm_lang$svg$Svg$text = _elm_lang$virtual_dom$VirtualDom$text;
+var _elm_lang$svg$Svg$svgNamespace = A2(
+	_elm_lang$virtual_dom$VirtualDom$property,
+	'namespace',
+	_elm_lang$core$Json_Encode$string('http://www.w3.org/2000/svg'));
+var _elm_lang$svg$Svg$node = F3(
+	function (name, attributes, children) {
+		return A3(
+			_elm_lang$virtual_dom$VirtualDom$node,
+			name,
+			{ctor: '::', _0: _elm_lang$svg$Svg$svgNamespace, _1: attributes},
+			children);
 	});
-var _user$project$Main$init = {
-	ctor: '_Tuple2',
-	_0: {},
-	_1: _elm_lang$core$Platform_Cmd$none
+var _elm_lang$svg$Svg$svg = _elm_lang$svg$Svg$node('svg');
+var _elm_lang$svg$Svg$foreignObject = _elm_lang$svg$Svg$node('foreignObject');
+var _elm_lang$svg$Svg$animate = _elm_lang$svg$Svg$node('animate');
+var _elm_lang$svg$Svg$animateColor = _elm_lang$svg$Svg$node('animateColor');
+var _elm_lang$svg$Svg$animateMotion = _elm_lang$svg$Svg$node('animateMotion');
+var _elm_lang$svg$Svg$animateTransform = _elm_lang$svg$Svg$node('animateTransform');
+var _elm_lang$svg$Svg$mpath = _elm_lang$svg$Svg$node('mpath');
+var _elm_lang$svg$Svg$set = _elm_lang$svg$Svg$node('set');
+var _elm_lang$svg$Svg$a = _elm_lang$svg$Svg$node('a');
+var _elm_lang$svg$Svg$defs = _elm_lang$svg$Svg$node('defs');
+var _elm_lang$svg$Svg$g = _elm_lang$svg$Svg$node('g');
+var _elm_lang$svg$Svg$marker = _elm_lang$svg$Svg$node('marker');
+var _elm_lang$svg$Svg$mask = _elm_lang$svg$Svg$node('mask');
+var _elm_lang$svg$Svg$pattern = _elm_lang$svg$Svg$node('pattern');
+var _elm_lang$svg$Svg$switch = _elm_lang$svg$Svg$node('switch');
+var _elm_lang$svg$Svg$symbol = _elm_lang$svg$Svg$node('symbol');
+var _elm_lang$svg$Svg$desc = _elm_lang$svg$Svg$node('desc');
+var _elm_lang$svg$Svg$metadata = _elm_lang$svg$Svg$node('metadata');
+var _elm_lang$svg$Svg$title = _elm_lang$svg$Svg$node('title');
+var _elm_lang$svg$Svg$feBlend = _elm_lang$svg$Svg$node('feBlend');
+var _elm_lang$svg$Svg$feColorMatrix = _elm_lang$svg$Svg$node('feColorMatrix');
+var _elm_lang$svg$Svg$feComponentTransfer = _elm_lang$svg$Svg$node('feComponentTransfer');
+var _elm_lang$svg$Svg$feComposite = _elm_lang$svg$Svg$node('feComposite');
+var _elm_lang$svg$Svg$feConvolveMatrix = _elm_lang$svg$Svg$node('feConvolveMatrix');
+var _elm_lang$svg$Svg$feDiffuseLighting = _elm_lang$svg$Svg$node('feDiffuseLighting');
+var _elm_lang$svg$Svg$feDisplacementMap = _elm_lang$svg$Svg$node('feDisplacementMap');
+var _elm_lang$svg$Svg$feFlood = _elm_lang$svg$Svg$node('feFlood');
+var _elm_lang$svg$Svg$feFuncA = _elm_lang$svg$Svg$node('feFuncA');
+var _elm_lang$svg$Svg$feFuncB = _elm_lang$svg$Svg$node('feFuncB');
+var _elm_lang$svg$Svg$feFuncG = _elm_lang$svg$Svg$node('feFuncG');
+var _elm_lang$svg$Svg$feFuncR = _elm_lang$svg$Svg$node('feFuncR');
+var _elm_lang$svg$Svg$feGaussianBlur = _elm_lang$svg$Svg$node('feGaussianBlur');
+var _elm_lang$svg$Svg$feImage = _elm_lang$svg$Svg$node('feImage');
+var _elm_lang$svg$Svg$feMerge = _elm_lang$svg$Svg$node('feMerge');
+var _elm_lang$svg$Svg$feMergeNode = _elm_lang$svg$Svg$node('feMergeNode');
+var _elm_lang$svg$Svg$feMorphology = _elm_lang$svg$Svg$node('feMorphology');
+var _elm_lang$svg$Svg$feOffset = _elm_lang$svg$Svg$node('feOffset');
+var _elm_lang$svg$Svg$feSpecularLighting = _elm_lang$svg$Svg$node('feSpecularLighting');
+var _elm_lang$svg$Svg$feTile = _elm_lang$svg$Svg$node('feTile');
+var _elm_lang$svg$Svg$feTurbulence = _elm_lang$svg$Svg$node('feTurbulence');
+var _elm_lang$svg$Svg$font = _elm_lang$svg$Svg$node('font');
+var _elm_lang$svg$Svg$linearGradient = _elm_lang$svg$Svg$node('linearGradient');
+var _elm_lang$svg$Svg$radialGradient = _elm_lang$svg$Svg$node('radialGradient');
+var _elm_lang$svg$Svg$stop = _elm_lang$svg$Svg$node('stop');
+var _elm_lang$svg$Svg$circle = _elm_lang$svg$Svg$node('circle');
+var _elm_lang$svg$Svg$ellipse = _elm_lang$svg$Svg$node('ellipse');
+var _elm_lang$svg$Svg$image = _elm_lang$svg$Svg$node('image');
+var _elm_lang$svg$Svg$line = _elm_lang$svg$Svg$node('line');
+var _elm_lang$svg$Svg$path = _elm_lang$svg$Svg$node('path');
+var _elm_lang$svg$Svg$polygon = _elm_lang$svg$Svg$node('polygon');
+var _elm_lang$svg$Svg$polyline = _elm_lang$svg$Svg$node('polyline');
+var _elm_lang$svg$Svg$rect = _elm_lang$svg$Svg$node('rect');
+var _elm_lang$svg$Svg$use = _elm_lang$svg$Svg$node('use');
+var _elm_lang$svg$Svg$feDistantLight = _elm_lang$svg$Svg$node('feDistantLight');
+var _elm_lang$svg$Svg$fePointLight = _elm_lang$svg$Svg$node('fePointLight');
+var _elm_lang$svg$Svg$feSpotLight = _elm_lang$svg$Svg$node('feSpotLight');
+var _elm_lang$svg$Svg$altGlyph = _elm_lang$svg$Svg$node('altGlyph');
+var _elm_lang$svg$Svg$altGlyphDef = _elm_lang$svg$Svg$node('altGlyphDef');
+var _elm_lang$svg$Svg$altGlyphItem = _elm_lang$svg$Svg$node('altGlyphItem');
+var _elm_lang$svg$Svg$glyph = _elm_lang$svg$Svg$node('glyph');
+var _elm_lang$svg$Svg$glyphRef = _elm_lang$svg$Svg$node('glyphRef');
+var _elm_lang$svg$Svg$textPath = _elm_lang$svg$Svg$node('textPath');
+var _elm_lang$svg$Svg$text_ = _elm_lang$svg$Svg$node('text');
+var _elm_lang$svg$Svg$tref = _elm_lang$svg$Svg$node('tref');
+var _elm_lang$svg$Svg$tspan = _elm_lang$svg$Svg$node('tspan');
+var _elm_lang$svg$Svg$clipPath = _elm_lang$svg$Svg$node('clipPath');
+var _elm_lang$svg$Svg$colorProfile = _elm_lang$svg$Svg$node('colorProfile');
+var _elm_lang$svg$Svg$cursor = _elm_lang$svg$Svg$node('cursor');
+var _elm_lang$svg$Svg$filter = _elm_lang$svg$Svg$node('filter');
+var _elm_lang$svg$Svg$script = _elm_lang$svg$Svg$node('script');
+var _elm_lang$svg$Svg$style = _elm_lang$svg$Svg$node('style');
+var _elm_lang$svg$Svg$view = _elm_lang$svg$Svg$node('view');
+
+var _elm_lang$svg$Svg_Attributes$writingMode = _elm_lang$virtual_dom$VirtualDom$attribute('writing-mode');
+var _elm_lang$svg$Svg_Attributes$wordSpacing = _elm_lang$virtual_dom$VirtualDom$attribute('word-spacing');
+var _elm_lang$svg$Svg_Attributes$visibility = _elm_lang$virtual_dom$VirtualDom$attribute('visibility');
+var _elm_lang$svg$Svg_Attributes$unicodeBidi = _elm_lang$virtual_dom$VirtualDom$attribute('unicode-bidi');
+var _elm_lang$svg$Svg_Attributes$textRendering = _elm_lang$virtual_dom$VirtualDom$attribute('text-rendering');
+var _elm_lang$svg$Svg_Attributes$textDecoration = _elm_lang$virtual_dom$VirtualDom$attribute('text-decoration');
+var _elm_lang$svg$Svg_Attributes$textAnchor = _elm_lang$virtual_dom$VirtualDom$attribute('text-anchor');
+var _elm_lang$svg$Svg_Attributes$stroke = _elm_lang$virtual_dom$VirtualDom$attribute('stroke');
+var _elm_lang$svg$Svg_Attributes$strokeWidth = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-width');
+var _elm_lang$svg$Svg_Attributes$strokeOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-opacity');
+var _elm_lang$svg$Svg_Attributes$strokeMiterlimit = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-miterlimit');
+var _elm_lang$svg$Svg_Attributes$strokeLinejoin = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-linejoin');
+var _elm_lang$svg$Svg_Attributes$strokeLinecap = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-linecap');
+var _elm_lang$svg$Svg_Attributes$strokeDashoffset = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-dashoffset');
+var _elm_lang$svg$Svg_Attributes$strokeDasharray = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-dasharray');
+var _elm_lang$svg$Svg_Attributes$stopOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('stop-opacity');
+var _elm_lang$svg$Svg_Attributes$stopColor = _elm_lang$virtual_dom$VirtualDom$attribute('stop-color');
+var _elm_lang$svg$Svg_Attributes$shapeRendering = _elm_lang$virtual_dom$VirtualDom$attribute('shape-rendering');
+var _elm_lang$svg$Svg_Attributes$pointerEvents = _elm_lang$virtual_dom$VirtualDom$attribute('pointer-events');
+var _elm_lang$svg$Svg_Attributes$overflow = _elm_lang$virtual_dom$VirtualDom$attribute('overflow');
+var _elm_lang$svg$Svg_Attributes$opacity = _elm_lang$virtual_dom$VirtualDom$attribute('opacity');
+var _elm_lang$svg$Svg_Attributes$mask = _elm_lang$virtual_dom$VirtualDom$attribute('mask');
+var _elm_lang$svg$Svg_Attributes$markerStart = _elm_lang$virtual_dom$VirtualDom$attribute('marker-start');
+var _elm_lang$svg$Svg_Attributes$markerMid = _elm_lang$virtual_dom$VirtualDom$attribute('marker-mid');
+var _elm_lang$svg$Svg_Attributes$markerEnd = _elm_lang$virtual_dom$VirtualDom$attribute('marker-end');
+var _elm_lang$svg$Svg_Attributes$lightingColor = _elm_lang$virtual_dom$VirtualDom$attribute('lighting-color');
+var _elm_lang$svg$Svg_Attributes$letterSpacing = _elm_lang$virtual_dom$VirtualDom$attribute('letter-spacing');
+var _elm_lang$svg$Svg_Attributes$kerning = _elm_lang$virtual_dom$VirtualDom$attribute('kerning');
+var _elm_lang$svg$Svg_Attributes$imageRendering = _elm_lang$virtual_dom$VirtualDom$attribute('image-rendering');
+var _elm_lang$svg$Svg_Attributes$glyphOrientationVertical = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-orientation-vertical');
+var _elm_lang$svg$Svg_Attributes$glyphOrientationHorizontal = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-orientation-horizontal');
+var _elm_lang$svg$Svg_Attributes$fontWeight = _elm_lang$virtual_dom$VirtualDom$attribute('font-weight');
+var _elm_lang$svg$Svg_Attributes$fontVariant = _elm_lang$virtual_dom$VirtualDom$attribute('font-variant');
+var _elm_lang$svg$Svg_Attributes$fontStyle = _elm_lang$virtual_dom$VirtualDom$attribute('font-style');
+var _elm_lang$svg$Svg_Attributes$fontStretch = _elm_lang$virtual_dom$VirtualDom$attribute('font-stretch');
+var _elm_lang$svg$Svg_Attributes$fontSize = _elm_lang$virtual_dom$VirtualDom$attribute('font-size');
+var _elm_lang$svg$Svg_Attributes$fontSizeAdjust = _elm_lang$virtual_dom$VirtualDom$attribute('font-size-adjust');
+var _elm_lang$svg$Svg_Attributes$fontFamily = _elm_lang$virtual_dom$VirtualDom$attribute('font-family');
+var _elm_lang$svg$Svg_Attributes$floodOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('flood-opacity');
+var _elm_lang$svg$Svg_Attributes$floodColor = _elm_lang$virtual_dom$VirtualDom$attribute('flood-color');
+var _elm_lang$svg$Svg_Attributes$filter = _elm_lang$virtual_dom$VirtualDom$attribute('filter');
+var _elm_lang$svg$Svg_Attributes$fill = _elm_lang$virtual_dom$VirtualDom$attribute('fill');
+var _elm_lang$svg$Svg_Attributes$fillRule = _elm_lang$virtual_dom$VirtualDom$attribute('fill-rule');
+var _elm_lang$svg$Svg_Attributes$fillOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('fill-opacity');
+var _elm_lang$svg$Svg_Attributes$enableBackground = _elm_lang$virtual_dom$VirtualDom$attribute('enable-background');
+var _elm_lang$svg$Svg_Attributes$dominantBaseline = _elm_lang$virtual_dom$VirtualDom$attribute('dominant-baseline');
+var _elm_lang$svg$Svg_Attributes$display = _elm_lang$virtual_dom$VirtualDom$attribute('display');
+var _elm_lang$svg$Svg_Attributes$direction = _elm_lang$virtual_dom$VirtualDom$attribute('direction');
+var _elm_lang$svg$Svg_Attributes$cursor = _elm_lang$virtual_dom$VirtualDom$attribute('cursor');
+var _elm_lang$svg$Svg_Attributes$color = _elm_lang$virtual_dom$VirtualDom$attribute('color');
+var _elm_lang$svg$Svg_Attributes$colorRendering = _elm_lang$virtual_dom$VirtualDom$attribute('color-rendering');
+var _elm_lang$svg$Svg_Attributes$colorProfile = _elm_lang$virtual_dom$VirtualDom$attribute('color-profile');
+var _elm_lang$svg$Svg_Attributes$colorInterpolation = _elm_lang$virtual_dom$VirtualDom$attribute('color-interpolation');
+var _elm_lang$svg$Svg_Attributes$colorInterpolationFilters = _elm_lang$virtual_dom$VirtualDom$attribute('color-interpolation-filters');
+var _elm_lang$svg$Svg_Attributes$clip = _elm_lang$virtual_dom$VirtualDom$attribute('clip');
+var _elm_lang$svg$Svg_Attributes$clipRule = _elm_lang$virtual_dom$VirtualDom$attribute('clip-rule');
+var _elm_lang$svg$Svg_Attributes$clipPath = _elm_lang$virtual_dom$VirtualDom$attribute('clip-path');
+var _elm_lang$svg$Svg_Attributes$baselineShift = _elm_lang$virtual_dom$VirtualDom$attribute('baseline-shift');
+var _elm_lang$svg$Svg_Attributes$alignmentBaseline = _elm_lang$virtual_dom$VirtualDom$attribute('alignment-baseline');
+var _elm_lang$svg$Svg_Attributes$zoomAndPan = _elm_lang$virtual_dom$VirtualDom$attribute('zoomAndPan');
+var _elm_lang$svg$Svg_Attributes$z = _elm_lang$virtual_dom$VirtualDom$attribute('z');
+var _elm_lang$svg$Svg_Attributes$yChannelSelector = _elm_lang$virtual_dom$VirtualDom$attribute('yChannelSelector');
+var _elm_lang$svg$Svg_Attributes$y2 = _elm_lang$virtual_dom$VirtualDom$attribute('y2');
+var _elm_lang$svg$Svg_Attributes$y1 = _elm_lang$virtual_dom$VirtualDom$attribute('y1');
+var _elm_lang$svg$Svg_Attributes$y = _elm_lang$virtual_dom$VirtualDom$attribute('y');
+var _elm_lang$svg$Svg_Attributes$xmlSpace = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:space');
+var _elm_lang$svg$Svg_Attributes$xmlLang = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:lang');
+var _elm_lang$svg$Svg_Attributes$xmlBase = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:base');
+var _elm_lang$svg$Svg_Attributes$xlinkType = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:type');
+var _elm_lang$svg$Svg_Attributes$xlinkTitle = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:title');
+var _elm_lang$svg$Svg_Attributes$xlinkShow = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:show');
+var _elm_lang$svg$Svg_Attributes$xlinkRole = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:role');
+var _elm_lang$svg$Svg_Attributes$xlinkHref = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:href');
+var _elm_lang$svg$Svg_Attributes$xlinkArcrole = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:arcrole');
+var _elm_lang$svg$Svg_Attributes$xlinkActuate = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:actuate');
+var _elm_lang$svg$Svg_Attributes$xChannelSelector = _elm_lang$virtual_dom$VirtualDom$attribute('xChannelSelector');
+var _elm_lang$svg$Svg_Attributes$x2 = _elm_lang$virtual_dom$VirtualDom$attribute('x2');
+var _elm_lang$svg$Svg_Attributes$x1 = _elm_lang$virtual_dom$VirtualDom$attribute('x1');
+var _elm_lang$svg$Svg_Attributes$xHeight = _elm_lang$virtual_dom$VirtualDom$attribute('x-height');
+var _elm_lang$svg$Svg_Attributes$x = _elm_lang$virtual_dom$VirtualDom$attribute('x');
+var _elm_lang$svg$Svg_Attributes$widths = _elm_lang$virtual_dom$VirtualDom$attribute('widths');
+var _elm_lang$svg$Svg_Attributes$width = _elm_lang$virtual_dom$VirtualDom$attribute('width');
+var _elm_lang$svg$Svg_Attributes$viewTarget = _elm_lang$virtual_dom$VirtualDom$attribute('viewTarget');
+var _elm_lang$svg$Svg_Attributes$viewBox = _elm_lang$virtual_dom$VirtualDom$attribute('viewBox');
+var _elm_lang$svg$Svg_Attributes$vertOriginY = _elm_lang$virtual_dom$VirtualDom$attribute('vert-origin-y');
+var _elm_lang$svg$Svg_Attributes$vertOriginX = _elm_lang$virtual_dom$VirtualDom$attribute('vert-origin-x');
+var _elm_lang$svg$Svg_Attributes$vertAdvY = _elm_lang$virtual_dom$VirtualDom$attribute('vert-adv-y');
+var _elm_lang$svg$Svg_Attributes$version = _elm_lang$virtual_dom$VirtualDom$attribute('version');
+var _elm_lang$svg$Svg_Attributes$values = _elm_lang$virtual_dom$VirtualDom$attribute('values');
+var _elm_lang$svg$Svg_Attributes$vMathematical = _elm_lang$virtual_dom$VirtualDom$attribute('v-mathematical');
+var _elm_lang$svg$Svg_Attributes$vIdeographic = _elm_lang$virtual_dom$VirtualDom$attribute('v-ideographic');
+var _elm_lang$svg$Svg_Attributes$vHanging = _elm_lang$virtual_dom$VirtualDom$attribute('v-hanging');
+var _elm_lang$svg$Svg_Attributes$vAlphabetic = _elm_lang$virtual_dom$VirtualDom$attribute('v-alphabetic');
+var _elm_lang$svg$Svg_Attributes$unitsPerEm = _elm_lang$virtual_dom$VirtualDom$attribute('units-per-em');
+var _elm_lang$svg$Svg_Attributes$unicodeRange = _elm_lang$virtual_dom$VirtualDom$attribute('unicode-range');
+var _elm_lang$svg$Svg_Attributes$unicode = _elm_lang$virtual_dom$VirtualDom$attribute('unicode');
+var _elm_lang$svg$Svg_Attributes$underlineThickness = _elm_lang$virtual_dom$VirtualDom$attribute('underline-thickness');
+var _elm_lang$svg$Svg_Attributes$underlinePosition = _elm_lang$virtual_dom$VirtualDom$attribute('underline-position');
+var _elm_lang$svg$Svg_Attributes$u2 = _elm_lang$virtual_dom$VirtualDom$attribute('u2');
+var _elm_lang$svg$Svg_Attributes$u1 = _elm_lang$virtual_dom$VirtualDom$attribute('u1');
+var _elm_lang$svg$Svg_Attributes$type_ = _elm_lang$virtual_dom$VirtualDom$attribute('type');
+var _elm_lang$svg$Svg_Attributes$transform = _elm_lang$virtual_dom$VirtualDom$attribute('transform');
+var _elm_lang$svg$Svg_Attributes$to = _elm_lang$virtual_dom$VirtualDom$attribute('to');
+var _elm_lang$svg$Svg_Attributes$title = _elm_lang$virtual_dom$VirtualDom$attribute('title');
+var _elm_lang$svg$Svg_Attributes$textLength = _elm_lang$virtual_dom$VirtualDom$attribute('textLength');
+var _elm_lang$svg$Svg_Attributes$targetY = _elm_lang$virtual_dom$VirtualDom$attribute('targetY');
+var _elm_lang$svg$Svg_Attributes$targetX = _elm_lang$virtual_dom$VirtualDom$attribute('targetX');
+var _elm_lang$svg$Svg_Attributes$target = _elm_lang$virtual_dom$VirtualDom$attribute('target');
+var _elm_lang$svg$Svg_Attributes$tableValues = _elm_lang$virtual_dom$VirtualDom$attribute('tableValues');
+var _elm_lang$svg$Svg_Attributes$systemLanguage = _elm_lang$virtual_dom$VirtualDom$attribute('systemLanguage');
+var _elm_lang$svg$Svg_Attributes$surfaceScale = _elm_lang$virtual_dom$VirtualDom$attribute('surfaceScale');
+var _elm_lang$svg$Svg_Attributes$style = _elm_lang$virtual_dom$VirtualDom$attribute('style');
+var _elm_lang$svg$Svg_Attributes$string = _elm_lang$virtual_dom$VirtualDom$attribute('string');
+var _elm_lang$svg$Svg_Attributes$strikethroughThickness = _elm_lang$virtual_dom$VirtualDom$attribute('strikethrough-thickness');
+var _elm_lang$svg$Svg_Attributes$strikethroughPosition = _elm_lang$virtual_dom$VirtualDom$attribute('strikethrough-position');
+var _elm_lang$svg$Svg_Attributes$stitchTiles = _elm_lang$virtual_dom$VirtualDom$attribute('stitchTiles');
+var _elm_lang$svg$Svg_Attributes$stemv = _elm_lang$virtual_dom$VirtualDom$attribute('stemv');
+var _elm_lang$svg$Svg_Attributes$stemh = _elm_lang$virtual_dom$VirtualDom$attribute('stemh');
+var _elm_lang$svg$Svg_Attributes$stdDeviation = _elm_lang$virtual_dom$VirtualDom$attribute('stdDeviation');
+var _elm_lang$svg$Svg_Attributes$startOffset = _elm_lang$virtual_dom$VirtualDom$attribute('startOffset');
+var _elm_lang$svg$Svg_Attributes$spreadMethod = _elm_lang$virtual_dom$VirtualDom$attribute('spreadMethod');
+var _elm_lang$svg$Svg_Attributes$speed = _elm_lang$virtual_dom$VirtualDom$attribute('speed');
+var _elm_lang$svg$Svg_Attributes$specularExponent = _elm_lang$virtual_dom$VirtualDom$attribute('specularExponent');
+var _elm_lang$svg$Svg_Attributes$specularConstant = _elm_lang$virtual_dom$VirtualDom$attribute('specularConstant');
+var _elm_lang$svg$Svg_Attributes$spacing = _elm_lang$virtual_dom$VirtualDom$attribute('spacing');
+var _elm_lang$svg$Svg_Attributes$slope = _elm_lang$virtual_dom$VirtualDom$attribute('slope');
+var _elm_lang$svg$Svg_Attributes$seed = _elm_lang$virtual_dom$VirtualDom$attribute('seed');
+var _elm_lang$svg$Svg_Attributes$scale = _elm_lang$virtual_dom$VirtualDom$attribute('scale');
+var _elm_lang$svg$Svg_Attributes$ry = _elm_lang$virtual_dom$VirtualDom$attribute('ry');
+var _elm_lang$svg$Svg_Attributes$rx = _elm_lang$virtual_dom$VirtualDom$attribute('rx');
+var _elm_lang$svg$Svg_Attributes$rotate = _elm_lang$virtual_dom$VirtualDom$attribute('rotate');
+var _elm_lang$svg$Svg_Attributes$result = _elm_lang$virtual_dom$VirtualDom$attribute('result');
+var _elm_lang$svg$Svg_Attributes$restart = _elm_lang$virtual_dom$VirtualDom$attribute('restart');
+var _elm_lang$svg$Svg_Attributes$requiredFeatures = _elm_lang$virtual_dom$VirtualDom$attribute('requiredFeatures');
+var _elm_lang$svg$Svg_Attributes$requiredExtensions = _elm_lang$virtual_dom$VirtualDom$attribute('requiredExtensions');
+var _elm_lang$svg$Svg_Attributes$repeatDur = _elm_lang$virtual_dom$VirtualDom$attribute('repeatDur');
+var _elm_lang$svg$Svg_Attributes$repeatCount = _elm_lang$virtual_dom$VirtualDom$attribute('repeatCount');
+var _elm_lang$svg$Svg_Attributes$renderingIntent = _elm_lang$virtual_dom$VirtualDom$attribute('rendering-intent');
+var _elm_lang$svg$Svg_Attributes$refY = _elm_lang$virtual_dom$VirtualDom$attribute('refY');
+var _elm_lang$svg$Svg_Attributes$refX = _elm_lang$virtual_dom$VirtualDom$attribute('refX');
+var _elm_lang$svg$Svg_Attributes$radius = _elm_lang$virtual_dom$VirtualDom$attribute('radius');
+var _elm_lang$svg$Svg_Attributes$r = _elm_lang$virtual_dom$VirtualDom$attribute('r');
+var _elm_lang$svg$Svg_Attributes$primitiveUnits = _elm_lang$virtual_dom$VirtualDom$attribute('primitiveUnits');
+var _elm_lang$svg$Svg_Attributes$preserveAspectRatio = _elm_lang$virtual_dom$VirtualDom$attribute('preserveAspectRatio');
+var _elm_lang$svg$Svg_Attributes$preserveAlpha = _elm_lang$virtual_dom$VirtualDom$attribute('preserveAlpha');
+var _elm_lang$svg$Svg_Attributes$pointsAtZ = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtZ');
+var _elm_lang$svg$Svg_Attributes$pointsAtY = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtY');
+var _elm_lang$svg$Svg_Attributes$pointsAtX = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtX');
+var _elm_lang$svg$Svg_Attributes$points = _elm_lang$virtual_dom$VirtualDom$attribute('points');
+var _elm_lang$svg$Svg_Attributes$pointOrder = _elm_lang$virtual_dom$VirtualDom$attribute('point-order');
+var _elm_lang$svg$Svg_Attributes$patternUnits = _elm_lang$virtual_dom$VirtualDom$attribute('patternUnits');
+var _elm_lang$svg$Svg_Attributes$patternTransform = _elm_lang$virtual_dom$VirtualDom$attribute('patternTransform');
+var _elm_lang$svg$Svg_Attributes$patternContentUnits = _elm_lang$virtual_dom$VirtualDom$attribute('patternContentUnits');
+var _elm_lang$svg$Svg_Attributes$pathLength = _elm_lang$virtual_dom$VirtualDom$attribute('pathLength');
+var _elm_lang$svg$Svg_Attributes$path = _elm_lang$virtual_dom$VirtualDom$attribute('path');
+var _elm_lang$svg$Svg_Attributes$panose1 = _elm_lang$virtual_dom$VirtualDom$attribute('panose-1');
+var _elm_lang$svg$Svg_Attributes$overlineThickness = _elm_lang$virtual_dom$VirtualDom$attribute('overline-thickness');
+var _elm_lang$svg$Svg_Attributes$overlinePosition = _elm_lang$virtual_dom$VirtualDom$attribute('overline-position');
+var _elm_lang$svg$Svg_Attributes$origin = _elm_lang$virtual_dom$VirtualDom$attribute('origin');
+var _elm_lang$svg$Svg_Attributes$orientation = _elm_lang$virtual_dom$VirtualDom$attribute('orientation');
+var _elm_lang$svg$Svg_Attributes$orient = _elm_lang$virtual_dom$VirtualDom$attribute('orient');
+var _elm_lang$svg$Svg_Attributes$order = _elm_lang$virtual_dom$VirtualDom$attribute('order');
+var _elm_lang$svg$Svg_Attributes$operator = _elm_lang$virtual_dom$VirtualDom$attribute('operator');
+var _elm_lang$svg$Svg_Attributes$offset = _elm_lang$virtual_dom$VirtualDom$attribute('offset');
+var _elm_lang$svg$Svg_Attributes$numOctaves = _elm_lang$virtual_dom$VirtualDom$attribute('numOctaves');
+var _elm_lang$svg$Svg_Attributes$name = _elm_lang$virtual_dom$VirtualDom$attribute('name');
+var _elm_lang$svg$Svg_Attributes$mode = _elm_lang$virtual_dom$VirtualDom$attribute('mode');
+var _elm_lang$svg$Svg_Attributes$min = _elm_lang$virtual_dom$VirtualDom$attribute('min');
+var _elm_lang$svg$Svg_Attributes$method = _elm_lang$virtual_dom$VirtualDom$attribute('method');
+var _elm_lang$svg$Svg_Attributes$media = _elm_lang$virtual_dom$VirtualDom$attribute('media');
+var _elm_lang$svg$Svg_Attributes$max = _elm_lang$virtual_dom$VirtualDom$attribute('max');
+var _elm_lang$svg$Svg_Attributes$mathematical = _elm_lang$virtual_dom$VirtualDom$attribute('mathematical');
+var _elm_lang$svg$Svg_Attributes$maskUnits = _elm_lang$virtual_dom$VirtualDom$attribute('maskUnits');
+var _elm_lang$svg$Svg_Attributes$maskContentUnits = _elm_lang$virtual_dom$VirtualDom$attribute('maskContentUnits');
+var _elm_lang$svg$Svg_Attributes$markerWidth = _elm_lang$virtual_dom$VirtualDom$attribute('markerWidth');
+var _elm_lang$svg$Svg_Attributes$markerUnits = _elm_lang$virtual_dom$VirtualDom$attribute('markerUnits');
+var _elm_lang$svg$Svg_Attributes$markerHeight = _elm_lang$virtual_dom$VirtualDom$attribute('markerHeight');
+var _elm_lang$svg$Svg_Attributes$local = _elm_lang$virtual_dom$VirtualDom$attribute('local');
+var _elm_lang$svg$Svg_Attributes$limitingConeAngle = _elm_lang$virtual_dom$VirtualDom$attribute('limitingConeAngle');
+var _elm_lang$svg$Svg_Attributes$lengthAdjust = _elm_lang$virtual_dom$VirtualDom$attribute('lengthAdjust');
+var _elm_lang$svg$Svg_Attributes$lang = _elm_lang$virtual_dom$VirtualDom$attribute('lang');
+var _elm_lang$svg$Svg_Attributes$keyTimes = _elm_lang$virtual_dom$VirtualDom$attribute('keyTimes');
+var _elm_lang$svg$Svg_Attributes$keySplines = _elm_lang$virtual_dom$VirtualDom$attribute('keySplines');
+var _elm_lang$svg$Svg_Attributes$keyPoints = _elm_lang$virtual_dom$VirtualDom$attribute('keyPoints');
+var _elm_lang$svg$Svg_Attributes$kernelUnitLength = _elm_lang$virtual_dom$VirtualDom$attribute('kernelUnitLength');
+var _elm_lang$svg$Svg_Attributes$kernelMatrix = _elm_lang$virtual_dom$VirtualDom$attribute('kernelMatrix');
+var _elm_lang$svg$Svg_Attributes$k4 = _elm_lang$virtual_dom$VirtualDom$attribute('k4');
+var _elm_lang$svg$Svg_Attributes$k3 = _elm_lang$virtual_dom$VirtualDom$attribute('k3');
+var _elm_lang$svg$Svg_Attributes$k2 = _elm_lang$virtual_dom$VirtualDom$attribute('k2');
+var _elm_lang$svg$Svg_Attributes$k1 = _elm_lang$virtual_dom$VirtualDom$attribute('k1');
+var _elm_lang$svg$Svg_Attributes$k = _elm_lang$virtual_dom$VirtualDom$attribute('k');
+var _elm_lang$svg$Svg_Attributes$intercept = _elm_lang$virtual_dom$VirtualDom$attribute('intercept');
+var _elm_lang$svg$Svg_Attributes$in2 = _elm_lang$virtual_dom$VirtualDom$attribute('in2');
+var _elm_lang$svg$Svg_Attributes$in_ = _elm_lang$virtual_dom$VirtualDom$attribute('in');
+var _elm_lang$svg$Svg_Attributes$ideographic = _elm_lang$virtual_dom$VirtualDom$attribute('ideographic');
+var _elm_lang$svg$Svg_Attributes$id = _elm_lang$virtual_dom$VirtualDom$attribute('id');
+var _elm_lang$svg$Svg_Attributes$horizOriginY = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-origin-y');
+var _elm_lang$svg$Svg_Attributes$horizOriginX = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-origin-x');
+var _elm_lang$svg$Svg_Attributes$horizAdvX = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-adv-x');
+var _elm_lang$svg$Svg_Attributes$height = _elm_lang$virtual_dom$VirtualDom$attribute('height');
+var _elm_lang$svg$Svg_Attributes$hanging = _elm_lang$virtual_dom$VirtualDom$attribute('hanging');
+var _elm_lang$svg$Svg_Attributes$gradientUnits = _elm_lang$virtual_dom$VirtualDom$attribute('gradientUnits');
+var _elm_lang$svg$Svg_Attributes$gradientTransform = _elm_lang$virtual_dom$VirtualDom$attribute('gradientTransform');
+var _elm_lang$svg$Svg_Attributes$glyphRef = _elm_lang$virtual_dom$VirtualDom$attribute('glyphRef');
+var _elm_lang$svg$Svg_Attributes$glyphName = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-name');
+var _elm_lang$svg$Svg_Attributes$g2 = _elm_lang$virtual_dom$VirtualDom$attribute('g2');
+var _elm_lang$svg$Svg_Attributes$g1 = _elm_lang$virtual_dom$VirtualDom$attribute('g1');
+var _elm_lang$svg$Svg_Attributes$fy = _elm_lang$virtual_dom$VirtualDom$attribute('fy');
+var _elm_lang$svg$Svg_Attributes$fx = _elm_lang$virtual_dom$VirtualDom$attribute('fx');
+var _elm_lang$svg$Svg_Attributes$from = _elm_lang$virtual_dom$VirtualDom$attribute('from');
+var _elm_lang$svg$Svg_Attributes$format = _elm_lang$virtual_dom$VirtualDom$attribute('format');
+var _elm_lang$svg$Svg_Attributes$filterUnits = _elm_lang$virtual_dom$VirtualDom$attribute('filterUnits');
+var _elm_lang$svg$Svg_Attributes$filterRes = _elm_lang$virtual_dom$VirtualDom$attribute('filterRes');
+var _elm_lang$svg$Svg_Attributes$externalResourcesRequired = _elm_lang$virtual_dom$VirtualDom$attribute('externalResourcesRequired');
+var _elm_lang$svg$Svg_Attributes$exponent = _elm_lang$virtual_dom$VirtualDom$attribute('exponent');
+var _elm_lang$svg$Svg_Attributes$end = _elm_lang$virtual_dom$VirtualDom$attribute('end');
+var _elm_lang$svg$Svg_Attributes$elevation = _elm_lang$virtual_dom$VirtualDom$attribute('elevation');
+var _elm_lang$svg$Svg_Attributes$edgeMode = _elm_lang$virtual_dom$VirtualDom$attribute('edgeMode');
+var _elm_lang$svg$Svg_Attributes$dy = _elm_lang$virtual_dom$VirtualDom$attribute('dy');
+var _elm_lang$svg$Svg_Attributes$dx = _elm_lang$virtual_dom$VirtualDom$attribute('dx');
+var _elm_lang$svg$Svg_Attributes$dur = _elm_lang$virtual_dom$VirtualDom$attribute('dur');
+var _elm_lang$svg$Svg_Attributes$divisor = _elm_lang$virtual_dom$VirtualDom$attribute('divisor');
+var _elm_lang$svg$Svg_Attributes$diffuseConstant = _elm_lang$virtual_dom$VirtualDom$attribute('diffuseConstant');
+var _elm_lang$svg$Svg_Attributes$descent = _elm_lang$virtual_dom$VirtualDom$attribute('descent');
+var _elm_lang$svg$Svg_Attributes$decelerate = _elm_lang$virtual_dom$VirtualDom$attribute('decelerate');
+var _elm_lang$svg$Svg_Attributes$d = _elm_lang$virtual_dom$VirtualDom$attribute('d');
+var _elm_lang$svg$Svg_Attributes$cy = _elm_lang$virtual_dom$VirtualDom$attribute('cy');
+var _elm_lang$svg$Svg_Attributes$cx = _elm_lang$virtual_dom$VirtualDom$attribute('cx');
+var _elm_lang$svg$Svg_Attributes$contentStyleType = _elm_lang$virtual_dom$VirtualDom$attribute('contentStyleType');
+var _elm_lang$svg$Svg_Attributes$contentScriptType = _elm_lang$virtual_dom$VirtualDom$attribute('contentScriptType');
+var _elm_lang$svg$Svg_Attributes$clipPathUnits = _elm_lang$virtual_dom$VirtualDom$attribute('clipPathUnits');
+var _elm_lang$svg$Svg_Attributes$class = _elm_lang$virtual_dom$VirtualDom$attribute('class');
+var _elm_lang$svg$Svg_Attributes$capHeight = _elm_lang$virtual_dom$VirtualDom$attribute('cap-height');
+var _elm_lang$svg$Svg_Attributes$calcMode = _elm_lang$virtual_dom$VirtualDom$attribute('calcMode');
+var _elm_lang$svg$Svg_Attributes$by = _elm_lang$virtual_dom$VirtualDom$attribute('by');
+var _elm_lang$svg$Svg_Attributes$bias = _elm_lang$virtual_dom$VirtualDom$attribute('bias');
+var _elm_lang$svg$Svg_Attributes$begin = _elm_lang$virtual_dom$VirtualDom$attribute('begin');
+var _elm_lang$svg$Svg_Attributes$bbox = _elm_lang$virtual_dom$VirtualDom$attribute('bbox');
+var _elm_lang$svg$Svg_Attributes$baseProfile = _elm_lang$virtual_dom$VirtualDom$attribute('baseProfile');
+var _elm_lang$svg$Svg_Attributes$baseFrequency = _elm_lang$virtual_dom$VirtualDom$attribute('baseFrequency');
+var _elm_lang$svg$Svg_Attributes$azimuth = _elm_lang$virtual_dom$VirtualDom$attribute('azimuth');
+var _elm_lang$svg$Svg_Attributes$autoReverse = _elm_lang$virtual_dom$VirtualDom$attribute('autoReverse');
+var _elm_lang$svg$Svg_Attributes$attributeType = _elm_lang$virtual_dom$VirtualDom$attribute('attributeType');
+var _elm_lang$svg$Svg_Attributes$attributeName = _elm_lang$virtual_dom$VirtualDom$attribute('attributeName');
+var _elm_lang$svg$Svg_Attributes$ascent = _elm_lang$virtual_dom$VirtualDom$attribute('ascent');
+var _elm_lang$svg$Svg_Attributes$arabicForm = _elm_lang$virtual_dom$VirtualDom$attribute('arabic-form');
+var _elm_lang$svg$Svg_Attributes$amplitude = _elm_lang$virtual_dom$VirtualDom$attribute('amplitude');
+var _elm_lang$svg$Svg_Attributes$allowReorder = _elm_lang$virtual_dom$VirtualDom$attribute('allowReorder');
+var _elm_lang$svg$Svg_Attributes$alphabetic = _elm_lang$virtual_dom$VirtualDom$attribute('alphabetic');
+var _elm_lang$svg$Svg_Attributes$additive = _elm_lang$virtual_dom$VirtualDom$attribute('additive');
+var _elm_lang$svg$Svg_Attributes$accumulate = _elm_lang$virtual_dom$VirtualDom$attribute('accumulate');
+var _elm_lang$svg$Svg_Attributes$accelerate = _elm_lang$virtual_dom$VirtualDom$attribute('accelerate');
+var _elm_lang$svg$Svg_Attributes$accentHeight = _elm_lang$virtual_dom$VirtualDom$attribute('accent-height');
+
+var _user$project$Gallows$viewGallows = A2(
+	_elm_lang$svg$Svg$svg,
+	{
+		ctor: '::',
+		_0: _elm_lang$svg$Svg_Attributes$id('drawing'),
+		_1: {
+			ctor: '::',
+			_0: _elm_lang$svg$Svg_Attributes$xHeight('155mm'),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$version('1.1'),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$svg$Svg_Attributes$viewBox('0 0 460.9899 548.03535'),
+					_1: {ctor: '[]'}
+				}
+			}
+		}
+	},
+	{
+		ctor: '::',
+		_0: A2(
+			_elm_lang$svg$Svg$g,
+			{
+				ctor: '::',
+				_0: _elm_lang$svg$Svg_Attributes$transform('translate(-27.2 -220)'),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$path,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$id('rope'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$style('fill: #a28d5d; stroke: #a28d5d'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$d(
+										A2(_elm_lang$core$Basics_ops['++'], 'm392 243c0.0695 21.3-1.32 43.1 0.826 63.9 0.816 14.4-9.87 35.9-13.3 ', '21.9-0.538-15.6 1.04-31.7-0.836-46.9-1.52-22.5 6.28-32.3 13.3-38.9z')),
+									_1: {ctor: '[]'}
+								}
+							}
+						}
+					},
+					{ctor: '[]'}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$svg$Svg$path,
+						{
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$id('brace'),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$style('fill: #c27207; stroke: #c27207'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$d(
+										A2(
+											_elm_lang$core$Basics_ops['++'],
+											'm264 261c-8.46 10.1-15 23.2-26.4 28.4-4.63 8.07-10.4 ',
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												'14.4-15.8 21.4-3.39 1.66-7.4 13.8-10.7 10.1-2.03 ',
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													'7.56-13.3 13.4-16.3 24.1-6.12 5.6-9.68 17.5-24.6-6.21 ',
+													A2(_elm_lang$core$Basics_ops['++'], '8.21-9.9 16.4-20.6 26.2-27.3 3.13-13.5 13.3-16.4 ', '18.2-27.4 9.05-4.29 15-16.7 23-24.6 7.56-7.78 8.4-25.1 26.4 1.5z'))))),
+									_1: {ctor: '[]'}
+								}
+							}
+						},
+						{ctor: '[]'}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$path,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$id('topbar'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$style('fill: #c27207; stroke: #c27207;'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$d(
+											A2(
+												_elm_lang$core$Basics_ops['++'],
+												'm153 242c-2.85 7.47 15-4.18 19.9 1.77 16.8-0.55 ',
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													'33.6-0.496 50.3 0.4 17.4-4.26 35.2-5.2 53-3.1 14.7-0.0166 ',
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														'28.3-3.66 42.9-2.61 13.2-1.21 26.6-4.69 39.8-1.7 ',
+														A2(
+															_elm_lang$core$Basics_ops['++'],
+															'16.6-4.35 34-1.58 50.8-4.67 6.82 3.47 19.4-5.5 25.4-0.814 ',
+															A2(
+																_elm_lang$core$Basics_ops['++'],
+																'7.54-6.27 8.07-1.21 6.51 0.087 11.2-6.69 24-0.784 ',
+																A2(
+																	_elm_lang$core$Basics_ops['++'],
+																	'33.3-4.21 6.26-4.06 7.15-1.99 5.75-0.117 11.8-4.39 7.23 ',
+																	A2(
+																		_elm_lang$core$Basics_ops['++'],
+																		'7.6-0.809 8.74-10 9.43-20.6 16.4-33.6 17.3-3.15 2.25-12.2 ',
+																		A2(
+																			_elm_lang$core$Basics_ops['++'],
+																			'7.5-10.7-0.601-12.1 6.85-19.2-3.05-30.5 5.64-9.12 ',
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				'1.37-15.3-4.47-25.7-1.47-13.9 1.89-27.7 4.61-41.9 ',
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					'3.98-14.5 0.434-29-1.27-43.4 1.52-12.3 2.38-24.7 0.756-37 ',
+																					A2(
+																						_elm_lang$core$Basics_ops['++'],
+																						'0.0478-17.9 0.437-36 1.92-53.2 6.96-5.15-13.5-22.8 ',
+																						A2(_elm_lang$core$Basics_ops['++'], '2.74-32.7-2.81-14.7 4.16-31.9 2.45-45.2 2.26-5.27 ', '5.56-16.3 2.32-5.49-2.97 10.9-7.8 21.7-15.8 32.7-23.7z'))))))))))))),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$svg$Svg$path,
+								{
+									ctor: '::',
+									_0: _elm_lang$svg$Svg_Attributes$id('post'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$style('fill: #c27207; stroke: #c27207'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$d(
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													'm192 220c2.46 52.1 9.22 104 4.99 156 3.68 33.9 4.84 68.4 ',
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														'7.03 103-1.16 15.9 6.7 56.1 0.805 60.4 5.24 23.4 1.75 76.8 ',
+														A2(
+															_elm_lang$core$Basics_ops['++'],
+															'8.97 110 0.27 34.2 8.28 72.3-24.9 ',
+															A2(_elm_lang$core$Basics_ops['++'], '76.8-2.52-50.9-5.76-103-4.18-153-9.74-39.9-4.41-83.3-10.5-124 ', '3.21-42.1-3.39-90-4.19-136-1.11-44-16.1-83.5 22.1-93.1z'))))),
+											_1: {ctor: '[]'}
+										}
+									}
+								},
+								{ctor: '[]'}),
+							_1: {
+								ctor: '::',
+								_0: A2(
+									_elm_lang$svg$Svg$path,
+									{
+										ctor: '::',
+										_0: _elm_lang$svg$Svg_Attributes$id('ground'),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$style('fill: #a28d5d; stroke: #a28d5d'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$d(
+													A2(
+														_elm_lang$core$Basics_ops['++'],
+														'm62.1 740c6.71-4.98 8.63-1.57 6.68-2.12 15.2-0.241 ',
+														A2(
+															_elm_lang$core$Basics_ops['++'],
+															'32.4-16.2 43.4-13.5 17.4-2.14 34.3-13.3 51.6-10.9 14.2-10.8 ',
+															A2(
+																_elm_lang$core$Basics_ops['++'],
+																'35.4-8.34 53.5-11 19.5-2.67 39 0.209 58.1-6.5 16.4 1.8 ',
+																A2(
+																	_elm_lang$core$Basics_ops['++'],
+																	'34.1-2.28 49.8 1.11 17.6-1.56 36.8-7.35 52.8-2.24 19.2-4.7 ',
+																	A2(
+																		_elm_lang$core$Basics_ops['++'],
+																		'36.1-0.348 55-0.635 17.4 4.18 35.2 4.18 53 4.87 6.89 ',
+																		A2(
+																			_elm_lang$core$Basics_ops['++'],
+																			'3.15-6.83 7.56-9.39 11l-18 13c-4.92-5.01-21.2 ',
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				'8.32-17.8-4.02-16.6 9.05-34.3-2.65-50.3-1.14-18.1 4.6-37.5 ',
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					'3.21-55.2-2.47-22.5 3.33-46.5 0.805-68 ',
+																					A2(
+																						_elm_lang$core$Basics_ops['++'],
+																						'6.81-17.4-3.99-33.6-3.13-50.5 2.25-14.8-4.4-31.5 5.54-43.3 ',
+																						A2(
+																							_elm_lang$core$Basics_ops['++'],
+																							'5.39-9.97-8.24-32.3 6.26-47.3 5.7-16.3 3.96-32.7 8.52-47.9 ',
+																							A2(
+																								_elm_lang$core$Basics_ops['++'],
+																								'15.6 8.82-9.11-12.9 6.34-19 4.49-5.77-0.753-16.2 10.3-13.5 ',
+																								A2(_elm_lang$core$Basics_ops['++'], '3.66-5.76 2.36-29.4 14.5-13.5 2.99 9.85-7.48 19.7-14.9 ', '29.6-22.4z'))))))))))))),
+												_1: {ctor: '[]'}
+											}
+										}
+									},
+									{ctor: '[]'}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$svg$Svg$path,
+										{
+											ctor: '::',
+											_0: _elm_lang$svg$Svg_Attributes$id('arm1'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$style('fill: #777; stroke: #777; stroke-width:3.5;'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$d(
+															A2(
+																_elm_lang$core$Basics_ops['++'],
+																'm324 512c8.62-14.1 21.6-24.6 33.8-35.3-0.693-4.06 ',
+																A2(
+																	_elm_lang$core$Basics_ops['++'],
+																	'7.34-5.86 2.11-7.06 5.35-8.79 12.7-18.7 23.7-20.1 ',
+																	A2(_elm_lang$core$Basics_ops['++'], '5.52-0.197-7.1 5.22-1.45 6.29-8.4 12.7-18 25.2-30.9 ', '33.5-5.91 10.6-15.5 19-27.2 22.6z')))),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$svg$Svg$path,
+											{
+												ctor: '::',
+												_0: _elm_lang$svg$Svg_Attributes$id('arm2'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$style('fill: #777; stroke: #777; stroke-width: 3.5;'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$d(
+																A2(
+																	_elm_lang$core$Basics_ops['++'],
+																	'm404 441c-2.77 11 12.8 8.21 14.7 17.3 5.98 4.84 15.2 7.98 ',
+																	A2(
+																		_elm_lang$core$Basics_ops['++'],
+																		'17 15.4 6.58 4 10.3 14.8 0.993 17.9-9.24 ',
+																		A2(_elm_lang$core$Basics_ops['++'], '5.71-14.3-6.87-17.9-13.2-7.1-2.4-16-14.6-18.3-16.8-3.98-3.2-9.01-7.24-11.2-10.9 ', '3.97-4.36 10.1-5.98 14.7-9.59z')))),
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											},
+											{ctor: '[]'}),
+										_1: {
+											ctor: '::',
+											_0: A2(
+												_elm_lang$svg$Svg$path,
+												{
+													ctor: '::',
+													_0: _elm_lang$svg$Svg_Attributes$id('leg1'),
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$style('fill: #777; stroke: #777; stroke-width: 3.5;'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$d(
+																	A2(
+																		_elm_lang$core$Basics_ops['++'],
+																		'm390 567c0.232 6.64-9.96 13-13.5 19.6-3.54 7.9-10.2 ',
+																		A2(
+																			_elm_lang$core$Basics_ops['++'],
+																			'12.3-13.7 20.2-4.05 11-5.5 25-17.1 30.9-4.53 4.61-10.3 ',
+																			A2(_elm_lang$core$Basics_ops['++'], '1.26-5.7-4.31 5.68-12.7 10.4-26 19.1-37 5.83-7.71 11.1-16 ', '18.1-22.8 3.83-3 8.35-4.96 12.9-6.48z')))),
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												},
+												{ctor: '[]'}),
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$svg$Svg$path,
+													{
+														ctor: '::',
+														_0: _elm_lang$svg$Svg_Attributes$id('leg2'),
+														_1: {
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$style('fill: #777; stroke: #777; stroke-width: 3.5;'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$d(
+																		A2(
+																			_elm_lang$core$Basics_ops['++'],
+																			'm399 568c-3.45 8.95 2.33 17.4 3.11 26.1-2.56 8.71 2.93 ',
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				'16.9 6.7 24.5 1.69 7.91 16 17.3 4.05 23.1-6.17 ',
+																				A2(_elm_lang$core$Basics_ops['++'], '3.54-17.5-1.07-13.1-9.18-6.86-2.85-9.21-12.5-11.1-18-1.1-11.3-3.95-22.5-5.49-33.7 ', '0.64-7.97 10.3-9.48 15.9-12.9z')))),
+																	_1: {ctor: '[]'}
+																}
+															}
+														}
+													},
+													{ctor: '[]'}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$svg$Svg$path,
+														{
+															ctor: '::',
+															_0: _elm_lang$svg$Svg_Attributes$id('body'),
+															_1: {
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$style('fill: #777; stroke: #777; stroke-width: 3.5;'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$d(
+																			A2(
+																				_elm_lang$core$Basics_ops['++'],
+																				'm397 430c-8.22 13.8 0.942 30.2-3.8 44.8 0.446 18.4 0.722 ',
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					'36.9-1.04 55.2-0.36 13.7 3.83 28.3-2.33 41.3-5.4 ',
+																					A2(
+																						_elm_lang$core$Basics_ops['++'],
+																						'9.94-17.8 1.96-12.2-7.45-1.23-8.65 0.92-17.8 ',
+																						A2(
+																							_elm_lang$core$Basics_ops['++'],
+																							'0.272-26.7-0.977-9.11 0.801-18.4 ',
+																							A2(
+																								_elm_lang$core$Basics_ops['++'],
+																								'0.338-27.6-0.679-17.8-0.0439-35.6 0.649-53.4 ',
+																								A2(_elm_lang$core$Basics_ops['++'], '0.58-8.26-3.27-19.6 8.51-21.4 3.28-1.35 6.8-2.39 ', '9.58-4.68z'))))))),
+																		_1: {ctor: '[]'}
+																	}
+																}
+															}
+														},
+														{ctor: '[]'}),
+													_1: {
+														ctor: '::',
+														_0: A2(
+															_elm_lang$svg$Svg$path,
+															{
+																ctor: '::',
+																_0: _elm_lang$svg$Svg_Attributes$id('head'),
+																_1: {
+																	ctor: '::',
+																	_0: _elm_lang$svg$Svg_Attributes$class('hide_component'),
+																	_1: {
+																		ctor: '::',
+																		_0: _elm_lang$svg$Svg_Attributes$style('fill:none; stroke: #777; stroke-width: 3.5;'),
+																		_1: {
+																			ctor: '::',
+																			_0: _elm_lang$svg$Svg_Attributes$d(
+																				A2(
+																					_elm_lang$core$Basics_ops['++'],
+																					'm440 389c-0.665 10.8-6.11 21.3-15.1 29.3-7.12 6.41-16.2 ',
+																					A2(
+																						_elm_lang$core$Basics_ops['++'],
+																						'11.1-26.1 13.3m13.2-15.3c-8.42 4.22-17.7 6.53-26.9 ',
+																						A2(
+																							_elm_lang$core$Basics_ops['++'],
+																							'6.62-9.15 0.0947-17.9-1.98-25.6-6.07m4.87 ',
+																							A2(
+																								_elm_lang$core$Basics_ops['++'],
+																								'10.2c-8.87-2.54-16.6-6.97-22.8-13-8.15-7.94-13.1-18.3-14.4-29.6m9.2 ',
+																								A2(
+																									_elm_lang$core$Basics_ops['++'],
+																									'15.2c-2.44-5.82-3.68-12.2-3.54-18.7 0.273-12.8 5.89-25.3 ',
+																									A2(
+																										_elm_lang$core$Basics_ops['++'],
+																										'16.2-34.3 3.72-3.24 7.98-5.95 12.7-8.02m-24.6 ',
+																										A2(
+																											_elm_lang$core$Basics_ops['++'],
+																											'4.13c1.26-1.63 2.65-3.18 4.15-4.64 9.88-9.59 24.3-15 ',
+																											A2(
+																												_elm_lang$core$Basics_ops['++'],
+																												'40.1-15.3 6.86-0.164 13.8 0.618 20.5 2.27m-16.8 3.21c13.2 ',
+																												A2(
+																													_elm_lang$core$Basics_ops['++'],
+																													'0.844 26.6 5.3 37.3 12.8 5.5 3.87 10.1 8.41 13.5 ',
+																													A2(
+																														_elm_lang$core$Basics_ops['++'],
+																														'13.4m-14.2-7.47c7.02 8.71 11.3 19.3 11.9 30.2 0.483 ',
+																														A2(
+																															_elm_lang$core$Basics_ops['++'],
+																															'8.22-1.11 16.2-4.62 23.3m10.7-20.6c-1.44 10.3-6.91 ',
+																															A2(
+																																_elm_lang$core$Basics_ops['++'],
+																																'20.2-15.5 28.3-5.87 5.49-13 9.97-21 13.2m9.16-3.79c-8.29 ',
+																																A2(
+																																	_elm_lang$core$Basics_ops['++'],
+																																	'5.29-18.3 7.86-28.7 ',
+																																	A2(
+																																		_elm_lang$core$Basics_ops['++'],
+																																		'7.45-14.4-0.563-28.6-6.81-39.2-17.3-0.041-0.0409-0.082-0.0818-0.123-0.123m20.1 ',
+																																		A2(
+																																			_elm_lang$core$Basics_ops['++'],
+																																			'9.56c-6.36-2.1-12-5.37-16.7-9.54-9.79-8.76-14.7-21-13.8-33.3 ',
+																																			A2(
+																																				_elm_lang$core$Basics_ops['++'],
+																																				'0.289-3.74 1.12-7.43 2.48-11m-5.77 ',
+																																				A2(
+																																					_elm_lang$core$Basics_ops['++'],
+																																					'20c-0.259-2.41-0.344-4.86-0.248-7.32 0.504-13 6-25.6 ',
+																																					A2(
+																																						_elm_lang$core$Basics_ops['++'],
+																																						'15.8-35.1 4.1-3.96 8.86-7.27 14.1-9.78m-18 3.7c10.7-8.22 ',
+																																						A2(
+																																							_elm_lang$core$Basics_ops['++'],
+																																							'23.8-13.2 37.2-13.9 10-0.459 19.7 1.59 28.2 5.96m-18.6 ',
+																																							A2(
+																																								_elm_lang$core$Basics_ops['++'],
+																																								'1.19c10.6 2.1 20.1 7.24 27.7 14.8 9.27 9.27 15.1 21.7 17 ',
+																																								A2(
+																																									_elm_lang$core$Basics_ops['++'],
+																																									'35.4m-0.75-22.6c2.71 6.71 4.04 13.9 3.81 21.2-0.412 ',
+																																									A2(
+																																										_elm_lang$core$Basics_ops['++'],
+																																										'12.9-5.68 25.5-15.3 36.2m15.6-32.6c-1.49 10.3-7.03 ',
+																																										A2(
+																																											_elm_lang$core$Basics_ops['++'],
+																																											'20.2-15.8 27.9-7.38 6.47-16.7 11.1-27.1 ',
+																																											A2(
+																																												_elm_lang$core$Basics_ops['++'],
+																																												'13.3m14.4-2.02c-8.18 4.43-17.1 6.8-26 7.03-13.7 ',
+																																												A2(
+																																													_elm_lang$core$Basics_ops['++'],
+																																													'0.355-26.4-4.45-35.2-12.9-0.615-0.589-1.21-1.19-1.78-1.81m15.3 ',
+																																													A2(
+																																														_elm_lang$core$Basics_ops['++'],
+																																														'9.62c-5.03-2.23-9.67-5.37-13.7-9.28-9.95-9.61-15.7-23.3-15.8-37.9-0.0322-7.37 ',
+																																														A2(
+																																															_elm_lang$core$Basics_ops['++'],
+																																															'1.37-14.8 4.16-21.9m-5.57 ',
+																																															A2(
+																																																_elm_lang$core$Basics_ops['++'],
+																																																'22.6c-0.0399-0.781-0.0579-1.56-0.0542-2.34 0.0607-12.7 ',
+																																																A2(
+																																																	_elm_lang$core$Basics_ops['++'],
+																																																	'5.85-24.8 16.2-33.2 8.64-7.01 20-11 32.2-10.9m-23.1 ',
+																																																	A2(
+																																																		_elm_lang$core$Basics_ops['++'],
+																																																		'0.57c8.5-4.65 18.5-7.26 28.9-7.51 12.5-0.296 24.9 2.81 ',
+																																																		A2(
+																																																			_elm_lang$core$Basics_ops['++'],
+																																																			'35.6 8.82m-25.6 1.99c7.52 2.26 14.3 6 20.1 10.9 10.7 9.02 ',
+																																																			A2(
+																																																				_elm_lang$core$Basics_ops['++'],
+																																																				'17.1 21.4 18.4 34 0.294 2.75 0.346 5.49 0.168 ',
+																																																				A2(
+																																																					_elm_lang$core$Basics_ops['++'],
+																																																					'8.18m1.59-7.13c-0.154 12.4-5.82 24.2-15.7 32.7-8.78 ',
+																																																					A2(
+																																																						_elm_lang$core$Basics_ops['++'],
+																																																						'7.49-20.3 11.9-32.7 12.1m23.4-4.39c-8.21 3.47-17.1 ',
+																																																						A2(
+																																																							_elm_lang$core$Basics_ops['++'],
+																																																							'5.47-25.9 5.65-13.9 ',
+																																																							A2(
+																																																								_elm_lang$core$Basics_ops['++'],
+																																																								'0.285-26.7-3.99-35.9-12.4-1.86-1.71-3.55-3.57-5.05-5.57m14.4 ',
+																																																								A2(
+																																																									_elm_lang$core$Basics_ops['++'],
+																																																									'15.3c-4.25-2.31-8.16-5.2-11.6-8.61-10-9.89-15.7-23.6-15.7-38.5 ',
+																																																									A2(
+																																																										_elm_lang$core$Basics_ops['++'],
+																																																										'0.006-7.72 1.52-15.6 4.47-23.1m-10.6 ',
+																																																										A2(
+																																																											_elm_lang$core$Basics_ops['++'],
+																																																											'27.4c-0.009-0.232-0.0152-0.465-0.02-0.697-0.272-13.2 ',
+																																																											A2(
+																																																												_elm_lang$core$Basics_ops['++'],
+																																																												'5.58-25.8 16.1-35 9.53-8.36 22.3-13.4 ',
+																																																												A2(
+																																																													_elm_lang$core$Basics_ops['++'],
+																																																													'35.8-14.4m-21-2.65c8.29-3.63 17.3-5.36 26.4-4.81 14.1 ',
+																																																													A2(
+																																																														_elm_lang$core$Basics_ops['++'],
+																																																														'0.859 27.2 7.19 36.8 18.4 0.326 0.381 0.647 0.767 0.963 ',
+																																																														A2(
+																																																															_elm_lang$core$Basics_ops['++'],
+																																																															'1.16m-11.8-8.11c5.25 2.39 10 5.64 14.2 9.6 9.47 9.12 14.9 ',
+																																																															A2(
+																																																																_elm_lang$core$Basics_ops['++'],
+																																																																'21.5 14.7 34.7m1.25-8.98c1.31 4.04 2 8.26 2.06 12.5 0.167 ',
+																																																																A2(
+																																																																	_elm_lang$core$Basics_ops['++'],
+																																																																	'12.8-5.38 25.4-15.2 34.7-3.75 3.53-8.05 6.5-12.7 ',
+																																																																	A2(
+																																																																		_elm_lang$core$Basics_ops['++'],
+																																																																		'8.78m25.6-39.1c-1.54 11.9-7.23 22.8-16.4 30.9-5.7 ',
+																																																																		A2(
+																																																																			_elm_lang$core$Basics_ops['++'],
+																																																																			'5.01-12.6 8.75-20.2 11m11.4-3.98c-8.86 5.75-19.1 ',
+																																																																			A2(
+																																																																				_elm_lang$core$Basics_ops['++'],
+																																																																				'8.42-29.4 7.69-11.1-0.781-21.8-5.48-30.2-13.4m9.21 ',
+																																																																				A2(
+																																																																					_elm_lang$core$Basics_ops['++'],
+																																																																					'0.64c-8-2.75-15.1-6.8-20.8-12-9.86-8.92-15-20.6-14.4-32.7 ',
+																																																																					A2(
+																																																																						_elm_lang$core$Basics_ops['++'],
+																																																																						'0.208-4.31 1.15-8.59 2.78-12.7m-1.3 ',
+																																																																						A2(
+																																																																							_elm_lang$core$Basics_ops['++'],
+																																																																							'30.4c-0.638-2.79-0.957-5.65-0.957-8.55 0.001-12.6 ',
+																																																																							A2(
+																																																																								_elm_lang$core$Basics_ops['++'],
+																																																																								'6.06-25.2 16.8-34.5 4.08-3.51 8.77-6.46 13.9-8.72m-3.56 ',
+																																																																								A2(
+																																																																									_elm_lang$core$Basics_ops['++'],
+																																																																									'0.45l0.0612-0.0546c10.2-9.1 23.8-14.2 37.9-14.1 7.7 ',
+																																																																									A2(
+																																																																										_elm_lang$core$Basics_ops['++'],
+																																																																										'0.0671 15.3 1.7 22.3 4.82m-18.6-1.06c12 1.4 22.6 6.59 ',
+																																																																										A2(
+																																																																											_elm_lang$core$Basics_ops['++'],
+																																																																											'30.3 14.7 8.7 9.19 13.2 21.6 12.5 34.9m-4.44-26.2c3.28 ',
+																																																																											A2(
+																																																																												_elm_lang$core$Basics_ops['++'],
+																																																																												'6.52 5 13.7 5 21.1 0.002 13.2-5.47 26-15.4 35.6-2.87 ',
+																																																																												A2(
+																																																																													_elm_lang$core$Basics_ops['++'],
+																																																																													'2.79-6.08 5.27-9.55 7.39m29.4-41.5c-0.891 11-6.21 ',
+																																																																													A2(
+																																																																														_elm_lang$core$Basics_ops['++'],
+																																																																														'21.4-14.8 29.9-8.84 8.64-20.6 14.6-33.1 17.3m8.16 ',
+																																																																														A2(
+																																																																															_elm_lang$core$Basics_ops['++'],
+																																																																															'6.25c-7.38 3.41-15.3 5.15-23.2 5.17-13.9 ',
+																																																																															A2(
+																																																																																_elm_lang$core$Basics_ops['++'],
+																																																																																'0.0228-26.8-5.31-36-14.6-1.47-1.5-2.84-3.09-4.08-4.75m14.6-2.68c-4.22-2.39-8.03-5.15-11.4-8.24-10.3-9.51-15.7-21.7-15.4-34.4 ',
+																																																																																A2(
+																																																																																	_elm_lang$core$Basics_ops['++'],
+																																																																																	'0.0219-0.985 0.0778-1.97 0.168-2.95m3.63 ',
+																																																																																	A2(
+																																																																																		_elm_lang$core$Basics_ops['++'],
+																																																																																		'22.6c-0.479-2.96-0.728-5.97-0.739-8.98-0.0498-13.3 ',
+																																																																																		A2(
+																																																																																			_elm_lang$core$Basics_ops['++'],
+																																																																																			'4.52-26 12.7-35.7 5.58-6.64 12.5-11.5 20-14.2m-7.96 ',
+																																																																																			A2(
+																																																																																				_elm_lang$core$Basics_ops['++'],
+																																																																																				'14.1c9.99-6.69 21.9-10.4 34.2-10.4 13.5 0.0434 26.6 4.65 ',
+																																																																																				A2(
+																																																																																					_elm_lang$core$Basics_ops['++'],
+																																																																																					'37 13.1m-28-26.2c7.72 2.53 14.9 6.76 20.9 12.4 8.84 8.23 ',
+																																																																																					A2(
+																																																																																						_elm_lang$core$Basics_ops['++'],
+																																																																																						'14.9 19 17.2 30.9m-2.65 2.06c2.18 5.91 3.41 12.1 3.57 ',
+																																																																																						A2(
+																																																																																							_elm_lang$core$Basics_ops['++'],
+																																																																																							'18.2 0.347 12.9-4.08 24.8-12.4 33.2-2.27 2.29-4.8 ',
+																																																																																							A2(
+																																																																																								_elm_lang$core$Basics_ops['++'],
+																																																																																								'4.28-7.53 5.93m-81.8-77.6 34.7-21.6m54.7 15.8 15.2 ',
+																																																																																								A2(
+																																																																																									_elm_lang$core$Basics_ops['++'],
+																																																																																									'34.8m-44.6-50.6 34.7 21.6m-2.43 63.2-36.4 19.3m-63.1-36.3 ',
+																																																																																									A2(
+																																																																																										_elm_lang$core$Basics_ops['++'],
+																																																																																										'2.07-37.2m41.7-30.9 41.6 7.31m-19.6-7.13 35.3 20.8m5.92 ',
+																																																																																										A2(
+																																																																																											_elm_lang$core$Basics_ops['++'],
+																																																																																											'9.96 2.07 37.2m-37.2 34.5-42.3-2.76m28.9 ',
+																																																																																											A2(
+																																																																																												_elm_lang$core$Basics_ops['++'],
+																																																																																												'5.07-40.3-11.8m-19.4-53.8 23.5-31.1m25 ',
+																																																																																												A2(_elm_lang$core$Basics_ops['++'], '96.2-36.9-18.5m-13.2-31.1 12.3-35.7m69.6-15 28.5 ', '27.7m-89.5-21.1 40.3-11.8m8.15 105-41.8-6.41')))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))),
+																			_1: {
+																				ctor: '::',
+																				_0: _elm_lang$svg$Svg_Attributes$transform('translate(1.43 2.86)'),
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															},
+															{ctor: '[]'}),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}),
+		_1: {ctor: '[]'}
+	});
+
+var _user$project$Ports$makeMove = _elm_lang$core$Native_Platform.outgoingPort(
+	'makeMove',
+	function (v) {
+		return v;
+	});
+var _user$project$Ports$updateTally = _elm_lang$core$Native_Platform.incomingPort('updateTally', _elm_lang$core$Json_Decode$value);
+
+var _user$project$Main$initialModel = {
+	turns_left: 7,
+	letters: {
+		ctor: '::',
+		_0: 'a',
+		_1: {
+			ctor: '::',
+			_0: '_',
+			_1: {
+				ctor: '::',
+				_0: 'c',
+				_1: {ctor: '[]'}
+			}
+		}
+	},
+	game_state: 'initializing',
+	used_letters: {ctor: '[]'}
 };
-var _user$project$Main$Tally = F4(
+var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Main$Model = F4(
 	function (a, b, c, d) {
 		return {turns_left: a, letters: b, game_state: c, used_letters: d};
 	});
-var _user$project$Main$Model = {};
+var _user$project$Main$modelDecoder = A5(
+	_elm_lang$core$Json_Decode$map4,
+	_user$project$Main$Model,
+	A2(_elm_lang$core$Json_Decode$field, 'turns_left', _elm_lang$core$Json_Decode$int),
+	A2(
+		_elm_lang$core$Json_Decode$field,
+		'letters',
+		_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)),
+	A2(_elm_lang$core$Json_Decode$field, 'game_state', _elm_lang$core$Json_Decode$string),
+	A2(
+		_elm_lang$core$Json_Decode$field,
+		'used_letters',
+		_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)));
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'Guess':
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					model,
+					{
+						ctor: '::',
+						_0: _user$project$Ports$makeMove(_p0._0),
+						_1: {ctor: '[]'}
+					});
+			case 'UpdateTally':
+				var _p1 = A2(_elm_lang$core$Json_Decode$decodeValue, _user$project$Main$modelDecoder, _p0._0);
+				if (_p1.ctor === 'Ok') {
+					var _p2 = _p1._0;
+					return A2(
+						_elm_lang$core$Debug$log,
+						_elm_lang$core$Basics$toString(_p2),
+						{ctor: '_Tuple2', _0: _p2, _1: _elm_lang$core$Platform_Cmd$none});
+				} else {
+					return A2(
+						_elm_lang$core$Debug$log,
+						_p1._0,
+						{ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none});
+				}
+			default:
+				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+		}
+	});
+var _user$project$Main$Won = {ctor: 'Won'};
+var _user$project$Main$Lost = {ctor: 'Lost'};
+var _user$project$Main$GoodGuess = {ctor: 'GoodGuess'};
+var _user$project$Main$BadGuess = {ctor: 'BadGuess'};
+var _user$project$Main$AlreadyUsed = {ctor: 'AlreadyUsed'};
+var _user$project$Main$Initializing = {ctor: 'Initializing'};
+var _user$project$Main$UpdateTally = function (a) {
+	return {ctor: 'UpdateTally', _0: a};
+};
+var _user$project$Main$subscriptions = function (model) {
+	return _user$project$Ports$updateTally(_user$project$Main$UpdateTally);
+};
 var _user$project$Main$Guess = function (a) {
 	return {ctor: 'Guess', _0: a};
 };
-var _user$project$Main$letterButton = function (letter) {
+var _user$project$Main$viewButton = function (letter) {
 	var correctClass = '';
 	return A2(
 		_elm_lang$html$Html$button,
@@ -12467,7 +13495,7 @@ var _user$project$Main$letterButton = function (letter) {
 };
 var _user$project$Main$viewKeyboard = A2(
 	_elm_lang$core$List$map,
-	_user$project$Main$letterButton,
+	_user$project$Main$viewButton,
 	A2(_elm_lang$core$String$split, '', 'abcdefghijklmnopqrstuvwxyz'));
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -12479,48 +13507,108 @@ var _user$project$Main$view = function (model) {
 				_elm_lang$html$Html$div,
 				{
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('guess-buttons'),
+					_0: _elm_lang$html$Html_Attributes$class('alert alert-info'),
 					_1: {ctor: '[]'}
 				},
-				_user$project$Main$viewKeyboard),
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Let\'s Play!'),
+					_1: {ctor: '[]'}
+				}),
 			_1: {
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$img,
+					_elm_lang$html$Html$div,
 					{
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$src('/images/logo.svg'),
+						_0: _elm_lang$html$Html_Attributes$class('row'),
 						_1: {ctor: '[]'}
 					},
-					{ctor: '[]'}),
-				_1: {
-					ctor: '::',
-					_0: A2(
-						_elm_lang$html$Html$h1,
-						{ctor: '[]'},
-						{
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('col-md-4'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _user$project$Gallows$viewGallows,
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$p,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('turns-left'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(
+												A2(
+													_elm_lang$core$Basics_ops['++'],
+													'Turns left: ',
+													_elm_lang$core$Basics$toString(model.turns_left))),
+											_1: {ctor: '[]'}
+										}),
+									_1: {ctor: '[]'}
+								}
+							}),
+						_1: {
 							ctor: '::',
-							_0: _elm_lang$html$Html$text('Your Elm App is working!'),
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('col-md-7 offset-md-1'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$p,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('so-far'),
+											_1: {ctor: '[]'}
+										},
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(
+												A2(_elm_lang$core$String$join, ' ', model.letters)),
+											_1: {ctor: '[]'}
+										}),
+									_1: {
+										ctor: '::',
+										_0: A2(
+											_elm_lang$html$Html$div,
+											{
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('guess-buttons'),
+												_1: {ctor: '[]'}
+											},
+											_user$project$Main$viewKeyboard),
+										_1: {ctor: '[]'}
+									}
+								}),
 							_1: {ctor: '[]'}
-						}),
-					_1: {ctor: '[]'}
-				}
+						}
+					}),
+				_1: {ctor: '[]'}
 			}
 		});
 };
 var _user$project$Main$main = _elm_lang$html$Html$program(
-	{
-		view: _user$project$Main$view,
-		init: _user$project$Main$init,
-		update: _user$project$Main$update,
-		subscriptions: _elm_lang$core$Basics$always(_elm_lang$core$Platform_Sub$none)
-	})();
+	{view: _user$project$Main$view, init: _user$project$Main$init, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})();
 var _user$project$Main$NoOp = {ctor: 'NoOp'};
 
 var Elm = {};
 Elm['Main'] = Elm['Main'] || {};
 if (typeof _user$project$Main$main !== 'undefined') {
-    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Main.Msg":{"args":[],"tags":{"Guess":["String"],"NoOp":[]}}},"aliases":{},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
+    _user$project$Main$main(Elm['Main'], 'Main', {"types":{"unions":{"Json.Encode.Value":{"args":[],"tags":{"Value":[]}},"Main.Msg":{"args":[],"tags":{"Guess":["String"],"UpdateTally":["Json.Decode.Value"],"NoOp":[]}}},"aliases":{"Json.Decode.Value":{"args":[],"type":"Json.Encode.Value"}},"message":"Main.Msg"},"versions":{"elm":"0.18.0"}});
 }
 
 if (typeof define === "function" && define['amd'])

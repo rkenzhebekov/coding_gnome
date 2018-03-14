@@ -1,13 +1,18 @@
 import {Socket} from "phoenix"
 
 export default class HangmanSocket {
-  constructor(tally) {
+  constructor(tally, elmApp) {
     this.tally = tally
+    this.elmApp = elmApp
     this.socket = new Socket("/socket", {})
     this.socket.connect()
   }
 
   connect_to_hangman() {
+    this.elmApp.ports.makeMove.subscribe(guess => {
+      this.make_move(guess)
+    })
+
     this.setup_channel()
     this.channel
         .join()
@@ -25,6 +30,7 @@ export default class HangmanSocket {
     this.channel = this.socket.channel("hangman:game", {})
     this.channel.on("tally", tally => {
       this.copy_tally(tally)
+      this.elmApp.ports.updateTally.send(tally)
     })
   }
 

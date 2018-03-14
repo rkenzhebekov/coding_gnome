@@ -8,6 +8,8 @@ const RESPONSES = {
 }
 
 import HangmanSocket from "./hangman_socket.js"
+import Elm from "./elm"
+
 
 let view = function(hangman) {
   let app = new Vue({
@@ -59,11 +61,19 @@ window.onload = function() {
     used_letters: [ ]
   }
 
-  let hangman = new HangmanSocket(tally)
+  const elmDiv = document.getElementById("elm-main")
+  const elmApp = Elm.Main.embed(elmDiv)
+  // elmApp.ports.makeMove.subscribe(msg => {
+  //   console.log("Received message: " + msg)
+  // })
+
+  let hangman = new HangmanSocket(tally, elmApp)
 
   let app     = view(hangman)
 
   hangman.connect_to_hangman()
+
+
 
   window.addEventListener('keydown', function (e) {
     if (event.keyCode >= 65 && event.keyCode <= 90) {
