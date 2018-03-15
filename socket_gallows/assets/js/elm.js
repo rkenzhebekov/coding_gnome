@@ -13387,6 +13387,47 @@ var _user$project$Ports$makeMove = _elm_lang$core$Native_Platform.outgoingPort(
 	});
 var _user$project$Ports$updateTally = _elm_lang$core$Native_Platform.incomingPort('updateTally', _elm_lang$core$Json_Decode$value);
 
+var _user$project$Main$alertMessage = function (model) {
+	var _p0 = function () {
+		var _p1 = model.game_state;
+		switch (_p1.ctor) {
+			case 'Won':
+				return {ctor: '_Tuple2', _0: 'success', _1: 'You Won!'};
+			case 'Lost':
+				return {ctor: '_Tuple2', _0: 'danger', _1: 'You Lost!'};
+			case 'GoodGuess':
+				return {ctor: '_Tuple2', _0: 'success', _1: 'Good guess!'};
+			case 'BadGuess':
+				return {ctor: '_Tuple2', _0: 'warning', _1: 'Bad guess!'};
+			case 'AlreadyUsed':
+				return {ctor: '_Tuple2', _0: 'info', _1: 'You already guessed that'};
+			case 'Initializing':
+				return {ctor: '_Tuple2', _0: 'info', _1: 'Let\'s Play!'};
+			default:
+				return {ctor: '_Tuple2', _0: 'info', _1: 'Something went wrong'};
+		}
+	}();
+	var className = _p0._0;
+	var message = _p0._1;
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class(
+				A2(_elm_lang$core$Basics_ops['++'], 'alert alert-', className)),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html$text(message),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$Model = F4(
+	function (a, b, c, d) {
+		return {turns_left: a, letters: b, game_state: c, used_letters: d};
+	});
+var _user$project$Main$Unknown = {ctor: 'Unknown'};
 var _user$project$Main$initialModel = {
 	turns_left: 7,
 	letters: {
@@ -13402,14 +13443,39 @@ var _user$project$Main$initialModel = {
 			}
 		}
 	},
-	game_state: 'initializing',
+	game_state: _user$project$Main$Unknown,
 	used_letters: {ctor: '[]'}
 };
 var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: _elm_lang$core$Platform_Cmd$none};
-var _user$project$Main$Model = F4(
-	function (a, b, c, d) {
-		return {turns_left: a, letters: b, game_state: c, used_letters: d};
-	});
+var _user$project$Main$Won = {ctor: 'Won'};
+var _user$project$Main$Lost = {ctor: 'Lost'};
+var _user$project$Main$GoodGuess = {ctor: 'GoodGuess'};
+var _user$project$Main$BadGuess = {ctor: 'BadGuess'};
+var _user$project$Main$AlreadyUsed = {ctor: 'AlreadyUsed'};
+var _user$project$Main$Initializing = {ctor: 'Initializing'};
+var _user$project$Main$gameState = function (state) {
+	var _p2 = state;
+	switch (_p2) {
+		case 'already_used':
+			return _user$project$Main$AlreadyUsed;
+		case 'bad_guess':
+			return _user$project$Main$BadGuess;
+		case 'good_guess':
+			return _user$project$Main$GoodGuess;
+		case 'lost':
+			return _user$project$Main$Lost;
+		case 'won':
+			return _user$project$Main$Won;
+		case 'initializing':
+			return _user$project$Main$Initializing;
+		default:
+			return _user$project$Main$Unknown;
+	}
+};
+var _user$project$Main$decodeGameState = function (state) {
+	return _elm_lang$core$Json_Decode$succeed(
+		_user$project$Main$gameState(state));
+};
 var _user$project$Main$modelDecoder = A5(
 	_elm_lang$core$Json_Decode$map4,
 	_user$project$Main$Model,
@@ -13418,48 +13484,45 @@ var _user$project$Main$modelDecoder = A5(
 		_elm_lang$core$Json_Decode$field,
 		'letters',
 		_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)),
-	A2(_elm_lang$core$Json_Decode$field, 'game_state', _elm_lang$core$Json_Decode$string),
+	A2(
+		_elm_lang$core$Json_Decode$field,
+		'game_state',
+		A2(_elm_lang$core$Json_Decode$andThen, _user$project$Main$decodeGameState, _elm_lang$core$Json_Decode$string)),
 	A2(
 		_elm_lang$core$Json_Decode$field,
 		'used_letters',
 		_elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$string)));
 var _user$project$Main$update = F2(
 	function (msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
+		var _p3 = msg;
+		switch (_p3.ctor) {
 			case 'Guess':
 				return A2(
 					_elm_lang$core$Platform_Cmd_ops['!'],
 					model,
 					{
 						ctor: '::',
-						_0: _user$project$Ports$makeMove(_p0._0),
+						_0: _user$project$Ports$makeMove(_p3._0),
 						_1: {ctor: '[]'}
 					});
 			case 'UpdateTally':
-				var _p1 = A2(_elm_lang$core$Json_Decode$decodeValue, _user$project$Main$modelDecoder, _p0._0);
-				if (_p1.ctor === 'Ok') {
-					var _p2 = _p1._0;
+				var _p4 = A2(_elm_lang$core$Json_Decode$decodeValue, _user$project$Main$modelDecoder, _p3._0);
+				if (_p4.ctor === 'Ok') {
+					var _p5 = _p4._0;
 					return A2(
 						_elm_lang$core$Debug$log,
-						_elm_lang$core$Basics$toString(_p2),
-						{ctor: '_Tuple2', _0: _p2, _1: _elm_lang$core$Platform_Cmd$none});
+						_elm_lang$core$Basics$toString(_p5),
+						{ctor: '_Tuple2', _0: _p5, _1: _elm_lang$core$Platform_Cmd$none});
 				} else {
 					return A2(
 						_elm_lang$core$Debug$log,
-						_p1._0,
+						_p4._0,
 						{ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none});
 				}
 			default:
 				return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 		}
 	});
-var _user$project$Main$Won = {ctor: 'Won'};
-var _user$project$Main$Lost = {ctor: 'Lost'};
-var _user$project$Main$GoodGuess = {ctor: 'GoodGuess'};
-var _user$project$Main$BadGuess = {ctor: 'BadGuess'};
-var _user$project$Main$AlreadyUsed = {ctor: 'AlreadyUsed'};
-var _user$project$Main$Initializing = {ctor: 'Initializing'};
 var _user$project$Main$UpdateTally = function (a) {
 	return {ctor: 'UpdateTally', _0: a};
 };
@@ -13469,52 +13532,50 @@ var _user$project$Main$subscriptions = function (model) {
 var _user$project$Main$Guess = function (a) {
 	return {ctor: 'Guess', _0: a};
 };
-var _user$project$Main$viewButton = function (letter) {
-	var correctClass = '';
-	return A2(
-		_elm_lang$html$Html$button,
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class(correctClass),
-			_1: {
+var _user$project$Main$viewButton = F2(
+	function (model, letter) {
+		var alreadyGuessed = A2(_elm_lang$core$List$member, letter, model.used_letters);
+		var correctGuess = alreadyGuessed && A2(_elm_lang$core$List$member, letter, model.letters);
+		return A2(
+			_elm_lang$html$Html$button,
+			{
 				ctor: '::',
-				_0: _elm_lang$html$Html_Events$onClick(
-					_user$project$Main$Guess(letter)),
+				_0: _elm_lang$html$Html_Attributes$classList(
+					{
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'correct', _1: correctGuess},
+						_1: {ctor: '[]'}
+					}),
 				_1: {
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$disabled(false),
-					_1: {ctor: '[]'}
+					_0: _elm_lang$html$Html_Events$onClick(
+						_user$project$Main$Guess(letter)),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$disabled(alreadyGuessed),
+						_1: {ctor: '[]'}
+					}
 				}
-			}
-		},
-		{
-			ctor: '::',
-			_0: _elm_lang$html$Html$text(letter),
-			_1: {ctor: '[]'}
-		});
+			},
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html$text(letter),
+				_1: {ctor: '[]'}
+			});
+	});
+var _user$project$Main$viewKeyboard = function (model) {
+	return A2(
+		_elm_lang$core$List$map,
+		_user$project$Main$viewButton(model),
+		A2(_elm_lang$core$String$split, '', 'abcdefghijklmnopqrstuvwxyz'));
 };
-var _user$project$Main$viewKeyboard = A2(
-	_elm_lang$core$List$map,
-	_user$project$Main$viewButton,
-	A2(_elm_lang$core$String$split, '', 'abcdefghijklmnopqrstuvwxyz'));
 var _user$project$Main$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		{ctor: '[]'},
 		{
 			ctor: '::',
-			_0: A2(
-				_elm_lang$html$Html$div,
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$class('alert alert-info'),
-					_1: {ctor: '[]'}
-				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text('Let\'s Play!'),
-					_1: {ctor: '[]'}
-				}),
+			_0: _user$project$Main$alertMessage(model),
 			_1: {
 				ctor: '::',
 				_0: A2(
@@ -13590,7 +13651,7 @@ var _user$project$Main$view = function (model) {
 												_0: _elm_lang$html$Html_Attributes$class('guess-buttons'),
 												_1: {ctor: '[]'}
 											},
-											_user$project$Main$viewKeyboard),
+											_user$project$Main$viewKeyboard(model)),
 										_1: {ctor: '[]'}
 									}
 								}),

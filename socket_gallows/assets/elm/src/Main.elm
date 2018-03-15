@@ -7,7 +7,7 @@ import Html.Events exposing (onClick)
 import Gallows
 import Ports
 
-import Json.Decode as Decode exposing (Decoder, field, Value, decodeValue)
+import Json.Decode as Decode exposing (Decoder, field, Value, decodeValue, succeed, andThen)
 
 
 type GameState
@@ -17,13 +17,14 @@ type GameState
     | GoodGuess
     | Lost
     | Won
+    | Unknown
 
 ---- MODEL ----
 
 type alias Model =
     { turns_left : Int
     , letters : List String
-    , game_state: String
+    , game_state: GameState
     , used_letters: List String
     }
 
@@ -32,7 +33,7 @@ initialModel : Model
 initialModel =
     { turns_left = 7
     , letters = ["a", "_", "c"]
-    , game_state = "initializing"
+    , game_state = Unknown
     , used_letters = []
     }
 
@@ -50,8 +51,24 @@ modelDecoder =
     Decode.map4 Model
        (field "turns_left" Decode.int)
        (field "letters" (Decode.list Decode.string))
-       (field "game_state" Decode.string)
+       (field "game_state" (Decode.string |> andThen decodeGameState))
        (field "used_letters" (Decode.list Decode.string))
+
+decodeGameState : String -> Decoder GameState
+decodeGameState state = succeed (gameState state)
+
+
+gameState : String -> GameState
+gameState state =
+    case state of
+        "already_used" -> AlreadyUsed
+        "bad_guess"    -> BadGuess
+        "good_guess"   -> GoodGuess
+        "lost"         -> Lost
+        "won"          -> Won
+        "initializing" -> Initializing
+        _              -> Unknown
+
 
 ---- UPDATE ----
 
@@ -87,7 +104,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ div [ class "alert alert-info"] [ text "Let's Play!" ]
+        [ alertMessage model
         , div [ class "row" ]
               [ div [ class "col-md-4" ]
                     [ Gallows.viewGallows
@@ -95,28 +112,46 @@ view model =
                     ]
               , div [ class "col-md-7 offset-md-1"]
                     [ p [ class "so-far" ] [ text (String.join " " model.letters) ]
-                    , div [ class "guess-buttons"] viewKeyboard
+                    , div [ class "guess-buttons"] (viewKeyboard model)
                     ]
               ]
         ]
 
-viewKeyboard : List (Html Msg)
-viewKeyboard =
+alertMessage : Model -> Html Msg
+alertMessage model =
+    let
+        (className, message) =
+            case model.game_state of
+                Won          -> ("success", "You Won!")
+                Lost         -> ("danger", "You Lost!")
+                GoodGuess    -> ("success", "Good guess!")
+                BadGuess     -> ("warning", "Bad guess!")
+                AlreadyUsed  -> ("info", "You already guessed that")
+                Initializing -> ("info", "Let's Play!")
+                _            -> ("info", "Something went wrong")
+    in
+        div [ class ("alert alert-" ++ className) ]
+            [ text message ]
+
+
+viewKeyboard : Model -> List (Html Msg)
+viewKeyboard model =
     "abcdefghijklmnopqrstuvwxyz"
         |> String.split ""
-        |> List.map viewButton
+        |> List.map (viewButton model)
 
-viewButton : String -> Html Msg
-viewButton letter =
+
+viewButton : Model -> String -> Html Msg
+viewButton model letter =
     let
-        correctClass = ""
+        alreadyGuessed = List.member letter model.used_letters
+        correctGuess = alreadyGuessed && (List.member letter model.letters)
     in
-        button [ class correctClass
+        button [ classList [("correct", correctGuess)]
                , onClick (Guess letter)
-               , disabled False
+               , disabled alreadyGuessed
                ]
                [ text letter ]
-
 
 
 ---- PROGRAM ----
