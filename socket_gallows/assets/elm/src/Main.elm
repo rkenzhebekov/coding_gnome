@@ -75,6 +75,7 @@ gameState state =
 
 type Msg
     = NoOp
+    | NewGame
     | Guess String
     | UpdateTally Decode.Value
 
@@ -93,6 +94,9 @@ update msg model =
                   Debug.log message
                   (model, Cmd.none)
 
+        NewGame ->
+            model ! [ Ports.newGame () ]
+
         NoOp ->
             (model, Cmd.none)
 
@@ -107,15 +111,28 @@ view model =
         [ alertMessage model
         , div [ class "row" ]
               [ div [ class "col-md-4" ]
-                    [ Gallows.viewGallows
+                    [ Gallows.viewGallows model.turns_left
                     , p [ class "turns-left" ] [ text ("Turns left: " ++ toString(model.turns_left))]
                     ]
               , div [ class "col-md-7 offset-md-1"]
                     [ p [ class "so-far" ] [ text (String.join " " model.letters) ]
-                    , div [ class "guess-buttons"] (viewKeyboard model)
+                    , viewGameControls model
                     ]
               ]
         ]
+
+viewGameControls : Model -> Html Msg
+viewGameControls model =
+  case model.game_state of
+      Lost ->
+          div [ class "new-game-button-container" ] 
+              [ button [ class "new-game-button"
+                       , onClick NewGame ]
+                       [ text "New Game" ]
+              ]
+      _    ->
+          div [ class "guess-buttons" ] (viewKeyboard model)
+
 
 alertMessage : Model -> Html Msg
 alertMessage model =

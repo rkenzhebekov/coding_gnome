@@ -13,6 +13,10 @@ export default class HangmanSocket {
       this.make_move(guess)
     })
 
+    this.elmApp.ports.newGame.subscribe(() => {
+      this.new_game()
+    })
+
     this.setup_channel()
     this.channel
         .join()

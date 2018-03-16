@@ -3,13 +3,12 @@ module Gallows exposing (..)
 import Svg exposing (svg, Svg, g, path)
 import Svg.Attributes exposing (xHeight, version, viewBox, id, class, transform, d, style)
 
-
-viewGallows : Svg msg
-viewGallows =
+viewGallows : Int -> Svg msg
+viewGallows turnsLeft =
     svg [ id "drawing", xHeight "155mm", version "1.1", viewBox "0 0 460.9899 548.03535" ]
         [ g [ transform "translate(-27.2 -220)"]
             [ path [ id "rope"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  6)
                    , style "fill: #a28d5d; stroke: #a28d5d"
                    , d ("m392 243c0.0695 21.3-1.32 43.1 0.826 63.9 0.816 14.4-9.87 35.9-13.3 " ++
                         "21.9-0.538-15.6 1.04-31.7-0.836-46.9-1.52-22.5 6.28-32.3 13.3-38.9z")
@@ -63,7 +62,7 @@ viewGallows =
                         "29.6-22.4z")
                    ] []
             , path [ id "arm1"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  0)
                    , style "fill: #777; stroke: #777; stroke-width:3.5;"
                    , d ("m324 512c8.62-14.1 21.6-24.6 33.8-35.3-0.693-4.06 " ++
                         "7.34-5.86 2.11-7.06 5.35-8.79 12.7-18.7 23.7-20.1 " ++
@@ -71,7 +70,7 @@ viewGallows =
                         "33.5-5.91 10.6-15.5 19-27.2 22.6z")
                    ] []
             , path [ id "arm2"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  1)
                    , style "fill: #777; stroke: #777; stroke-width: 3.5;"
                    , d ("m404 441c-2.77 11 12.8 8.21 14.7 17.3 5.98 4.84 15.2 7.98 " ++
                         "17 15.4 6.58 4 10.3 14.8 0.993 17.9-9.24 " ++
@@ -79,7 +78,7 @@ viewGallows =
                         "3.97-4.36 10.1-5.98 14.7-9.59z")
                    ] []
             , path [ id "leg1"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  2)
                    , style "fill: #777; stroke: #777; stroke-width: 3.5;"
                    , d ("m390 567c0.232 6.64-9.96 13-13.5 19.6-3.54 7.9-10.2 " ++
                         "12.3-13.7 20.2-4.05 11-5.5 25-17.1 30.9-4.53 4.61-10.3 " ++
@@ -87,7 +86,7 @@ viewGallows =
                         "18.1-22.8 3.83-3 8.35-4.96 12.9-6.48z")
                    ] []
             , path [ id "leg2"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  3)
                    , style "fill: #777; stroke: #777; stroke-width: 3.5;"
                    , d ("m399 568c-3.45 8.95 2.33 17.4 3.11 26.1-2.56 8.71 2.93 " ++
                         "16.9 6.7 24.5 1.69 7.91 16 17.3 4.05 23.1-6.17 " ++
@@ -95,7 +94,7 @@ viewGallows =
                         "0.64-7.97 10.3-9.48 15.9-12.9z")
                    ] []
             , path [ id "body"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  4)
                    , style "fill: #777; stroke: #777; stroke-width: 3.5;"
                    , d ("m397 430c-8.22 13.8 0.942 30.2-3.8 44.8 0.446 18.4 0.722 " ++
                         "36.9-1.04 55.2-0.36 13.7 3.83 28.3-2.33 41.3-5.4 " ++
@@ -106,7 +105,7 @@ viewGallows =
                         "9.58-4.68z")
                    ] []
             , path [ id "head"
-                   , class "hide_component"
+                   , class (hideComponent turnsLeft  5)
                    , style "fill:none; stroke: #777; stroke-width: 3.5;"
                    , d ("m440 389c-0.665 10.8-6.11 21.3-15.1 29.3-7.12 6.41-16.2 " ++
                         "11.1-26.1 13.3m13.2-15.3c-8.42 4.22-17.7 6.53-26.9 " ++
@@ -186,3 +185,12 @@ viewGallows =
                    ] []
             ]
         ]
+
+
+hideComponent : Int -> Int -> String
+hideComponent turnsLeft threshold =
+    if turnsLeft > threshold then
+        "hide_component"
+    else
+        ""
+
