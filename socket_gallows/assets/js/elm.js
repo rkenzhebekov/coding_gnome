@@ -13526,16 +13526,9 @@ var _user$project$Main$update = F2(
 			case 'UpdateTally':
 				var _p4 = A2(_elm_lang$core$Json_Decode$decodeValue, _user$project$Main$modelDecoder, _p3._0);
 				if (_p4.ctor === 'Ok') {
-					var _p5 = _p4._0;
-					return A2(
-						_elm_lang$core$Debug$log,
-						_elm_lang$core$Basics$toString(_p5),
-						{ctor: '_Tuple2', _0: _p5, _1: _elm_lang$core$Platform_Cmd$none});
+					return {ctor: '_Tuple2', _0: _p4._0, _1: _elm_lang$core$Platform_Cmd$none};
 				} else {
-					return A2(
-						_elm_lang$core$Debug$log,
-						_p4._0,
-						{ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none});
+					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 				}
 			case 'NewGame':
 				return A2(
@@ -13599,44 +13592,48 @@ var _user$project$Main$viewKeyboard = function (model) {
 };
 var _user$project$Main$NewGame = {ctor: 'NewGame'};
 var _user$project$Main$viewGameControls = function (model) {
-	var _p6 = model.game_state;
-	if (_p6.ctor === 'Lost') {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('new-game-button-container'),
-				_1: {ctor: '[]'}
-			},
-			{
-				ctor: '::',
-				_0: A2(
-					_elm_lang$html$Html$button,
-					{
+	var newGameButton = A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('new-game-button-container'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$button,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('new-game-button'),
+					_1: {
 						ctor: '::',
-						_0: _elm_lang$html$Html_Attributes$class('new-game-button'),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$NewGame),
-							_1: {ctor: '[]'}
-						}
-					},
-					{
-						ctor: '::',
-						_0: _elm_lang$html$Html$text('New Game'),
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$NewGame),
 						_1: {ctor: '[]'}
-					}),
-				_1: {ctor: '[]'}
-			});
-	} else {
-		return A2(
-			_elm_lang$html$Html$div,
-			{
-				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$class('guess-buttons'),
-				_1: {ctor: '[]'}
-			},
-			_user$project$Main$viewKeyboard(model));
+					}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('New Game'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+	var _p5 = model.game_state;
+	switch (_p5.ctor) {
+		case 'Lost':
+			return newGameButton;
+		case 'Won':
+			return newGameButton;
+		default:
+			return A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('guess-buttons'),
+					_1: {ctor: '[]'}
+				},
+				_user$project$Main$viewKeyboard(model));
 	}
 };
 var _user$project$Main$view = function (model) {

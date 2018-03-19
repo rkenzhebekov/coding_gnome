@@ -1,8 +1,7 @@
 import {Socket} from "phoenix"
 
 export default class HangmanSocket {
-  constructor(tally, elmApp) {
-    this.tally = tally
+  constructor(elmApp) {
     this.elmApp = elmApp
     this.socket = new Socket("/socket", {})
     this.socket.connect()
@@ -33,15 +32,8 @@ export default class HangmanSocket {
   setup_channel() {
     this.channel = this.socket.channel("hangman:game", {})
     this.channel.on("tally", tally => {
-      this.copy_tally(tally)
       this.elmApp.ports.updateTally.send(tally)
     })
-  }
-
-  copy_tally(from) {
-    for (let k in from) {
-      this.tally[k] = from[k]
-    }
   }
 
   fetch_tally() {

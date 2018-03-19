@@ -88,10 +88,8 @@ update msg model =
         UpdateTally tally ->
             case decodeValue modelDecoder tally of
                 Ok newModel ->
-                  Debug.log (toString(newModel))
                   (newModel, Cmd.none)
                 Err message ->
-                  Debug.log message
                   (model, Cmd.none)
 
         NewGame ->
@@ -123,15 +121,21 @@ view model =
 
 viewGameControls : Model -> Html Msg
 viewGameControls model =
-  case model.game_state of
-      Lost ->
+  let
+      newGameButton =
           div [ class "new-game-button-container" ] 
               [ button [ class "new-game-button"
                        , onClick NewGame ]
                        [ text "New Game" ]
               ]
-      _    ->
-          div [ class "guess-buttons" ] (viewKeyboard model)
+  in
+      case model.game_state of
+          Lost ->
+              newGameButton
+          Won ->
+              newGameButton
+          _    ->
+              div [ class "guess-buttons" ] (viewKeyboard model)
 
 
 alertMessage : Model -> Html Msg
